@@ -1,0 +1,25 @@
+{% set url=h.url_for(controller='dataset', action='read', id=package.name) %}
+{% set truncate=truncate or 0 %}
+{% block organization_item %}
+  <section class="group-list module module-narrow module-shallow">
+    {% block organization_item_header %}
+    {% block organization_item_header_image %}
+        Dataset
+    {% endblock %}
+      <header class="module-heading">
+        {% block organization_item_header_title %}
+          <h3 class="media-heading"><a href={{ url }}>{{ package.title or package.name }}</a></h3>
+        {% endblock %}
+        {% block organization_item_header_description %}
+          {% if package.notes %}
+            {% if truncate == 0 %}
+              <p>{{ h.markdown_extract(package.notes)|urlize }}</p>
+            {% else %}
+              <p>{{ h.markdown_extract(package.notes, truncate)|urlize }}</p>
+            {% endif %}
+          {% endif %}
+        {% endblock %}
+      </header>
+    {% endblock %}
+  </section>
+{% endblock %}

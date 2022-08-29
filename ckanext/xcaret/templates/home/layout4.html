@@ -1,0 +1,52 @@
+
+<div role="main" class="hero" style="background-image: url({{ h.url_for_static('/base/images/nado-xenotes-04.jpg') }}); background-position: center;
+background-repeat: no-repeat; background-size: cover; height:500px;">
+    <div class="container">
+      <div class="row row1 xcaret_row">
+        <h1 class="xcaret_text xcaret_title"> {{ g.site_title }}</h1>
+        <h1 class="xcaret_text xcaret_description"> {{ g.site_description }}</h1>
+        {% block search %}
+          {% snippet 'home/snippets/xcaret_search.html' %}
+        {% endblock %}
+      </div>
+    </div>
+  </div>
+
+  <div role="main">
+    <div class="container">
+      <div class="row row2">
+        <div class="col">
+          {% block featured_organization %}
+            {% snippet 'home/snippets/all_organizations.html' %}
+          {% endblock %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div role="blogs">
+    <div class="container">
+      <div class="row row2">
+        <h1 class="xcaret_text" style="color: #214286"> Blogs </h1>
+
+        <div class="col">
+          {% block featured_group %}
+            {% snippet 'home/snippets/latest_pages.html' %}
+          {% endblock %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div role="main">
+    <div class="container">
+
+        <h1 class="xcaret_text" style="color: #214286"> Datasets </h1>
+
+        <div class="col">
+        {% block featured_dataset %}
+            {% snippet 'home/snippets/latest_datasets.html' %}
+          {% endblock %}
+        </div>
+    </div>
+  </div>

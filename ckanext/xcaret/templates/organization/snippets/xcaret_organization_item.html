@@ -1,0 +1,10 @@
+{% set type = organization.type or 'group' %}
+{% set url = h.url_for(type ~ '.read', id=organization.name) %}
+
+
+{% block image %}
+<img src="{{ organization.image_display_url or h.url_for_static('/base/images/placeholder-organization.png') }}" alt="{{ organization.name }}" class="img-responsive media-image">
+{% endblock %}
+{% block title %}
+<h2 class="media-heading">{{ organization.package_count }}</h2>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% set pages = h.featured_pages(3) %}
+{% set pages_total = pages|length %}
+{% set editor = h.get_wysiwyg_editor() %}
+
+<div class="row">
+
+  {% for page in pages %}
+
+  {% set url = h.url_for('pages.blog_show', page=page.name) %}
+
+  <div class="col col-xs-3" style="margin: 10px;">
+    <div class="card-group centered-stories">
+      <div class="card">
+        <img class="card-img-top image-responsive" width="295" height="231px"
+          src="{{ page.image or h.url_for_static('/base/images/no-picture.jpg')}}" alt="">
+        <div class="card-body xcaret_pages_box">
+          <a href="{{ url }}" class="card-title xcaret_pages_title">{{ page.title|truncate(30, True, '...') }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% endfor %}
+</div>
