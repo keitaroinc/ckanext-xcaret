@@ -1,7 +1,5 @@
 import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
-
-
 from ckan.lib.plugins import DefaultPermissionLabels
 from ckan.plugins.toolkit import get_action
 from ckan.authz import check_config_permission
