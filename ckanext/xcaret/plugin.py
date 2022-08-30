@@ -1,21 +1,27 @@
 import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
 
+
+from ckan.lib.plugins import DefaultPermissionLabels
+from ckan.plugins.toolkit import get_action
+from ckan.authz import check_config_permission
+
 from ckanext.xcaret.blueprint import xcaret
 from ckanext.xcaret import helpers as h
 
-class XcaretPlugin(plugins.SingletonPlugin):
+
+class XcaretPlugin(plugins.SingletonPlugin, DefaultPermissionLabels):
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.IBlueprint)
-    plugins.implements(plugins.ITemplateHelpers)    
+    plugins.implements(plugins.ITemplateHelpers)
+    plugins.implements(plugins.IPermissionLabels)
 
     # IConfigurer
 
     def update_config(self, config_):
         toolkit.add_template_directory(config_, 'templates')
         toolkit.add_public_directory(config_, 'public')
-        toolkit.add_resource('fanstatic',
-            'xcaret')
+        toolkit.add_resource('fanstatic', 'xcaret')
         toolkit.add_resource('assets', 'xcaret')
 
     def update_config_schema(self, schema):
@@ -25,12 +31,11 @@ class XcaretPlugin(plugins.SingletonPlugin):
 
         schema.update({
             'ckan.hero': validators,
-        'hero_upload': [ignore_missing, unicode_safe],
-        'clear_hero_upload': [ignore_missing, unicode_safe],            
+            'hero_upload': [ignore_missing, unicode_safe],
+            'clear_hero_upload': [ignore_missing, unicode_safe],
         })
 
         return schema
-
 
     def get_blueprint(self):
         return [xcaret]
@@ -44,3 +49,47 @@ class XcaretPlugin(plugins.SingletonPlugin):
             'featured_pages': h.get_featured_pages
 
         }
+
+    # IPermissionLabels
+    def get_dataset_labels(self, dataset_obj):
+        u'''
+        Use creator-*, admin-* and collaborator-*
+        labels for Restricted datasets
+        '''
+        if dataset_obj.notes.startswith(u'Restricted:'):
+
+            labels = [u'creator-%s' % dataset_obj.creator_user_id]
+
+            # This gives right to the admins of the organization
+            # if the dataset belongs to any
+            # We can disable it if requested
+            if dataset_obj.owner_org:
+                labels += [u'admin-%s' % dataset_obj.owner_org]
+
+            if check_config_permission('allow_dataset_collaborators'):
+                # Add a generic label for all this dataset collaborators
+                labels += [u'collaborator-%s' % dataset_obj.id]
+
+            return labels
+
+        return super(XcaretPlugin, self).get_dataset_labels(
+            dataset_obj)
+
+    def get_user_dataset_labels(self, user_obj):
+        u'''
+        Include admin-* labels for users in addition to default labels
+        creator-*, collaborator-* and public
+        '''
+        labels = super(XcaretPlugin, self
+                       ).get_user_dataset_labels(user_obj)
+
+        # This gives right to the user to see the dataset
+        # if the dataset belongs to an organization
+        # and the user is admin to that organization
+        # We can disable it if requested
+        if user_obj:
+            orgs = get_action(u'organization_list_for_user')(
+                {u'user': user_obj.id}, {u'permission': u'admin'})
+            labels.extend(u'admin-%s' % o['id'] for o in orgs)
+
+        return labels
