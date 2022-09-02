@@ -1,21 +1,73 @@
 {% set url=h.url_for(controller='dataset', action='read', id=package.name) %}
 {% set truncate=truncate or 0 %}
 {% block organization_item %}
+<i class=" fa fa-solid fa-circle-small"></i>
   <section class="group-list module module-narrow module-shallow">
     {% block organization_item_header %}
     {% block organization_item_header_image %}
-        Dataset
+    <i class=" fa fa-solid fa-circle" style="display: inline-block; color: #E30084;"></i>
+    <h1 class="" style="
+    width: 100px;
+    height: 36px;
+    left: 62px;
+    top: 229px;
+    
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 18px;
+    display: inline;
+    
+    color: #E30084;">   
+ DATASET </h1>
     {% endblock %}
       <header class="module-heading">
         {% block organization_item_header_title %}
-          <h3 class="media-heading"><a href={{ url }}>{{ package.title or package.name }}</a></h3>
+          <h3 class="media-heading"><a href={{ url }} style="
+            width: 212.44px;
+            height: 22.18px;
+            left: 72.57px;
+            top: 264.48px;
+            
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 19px;
+            
+            color: #214286;
+            
+            ">{{ package.title or package.name }}</a></h3>
         {% endblock %}
         {% block organization_item_header_description %}
           {% if package.notes %}
             {% if truncate == 0 %}
-              <p>{{ h.markdown_extract(package.notes)|urlize }}</p>
+              <p style="width: 256.4px;
+              height: 104.84px;
+              left: 75.31px;
+              top: 297.74px;
+              
+              font-family: 'Lato';
+              font-style: normal;
+              font-weight: 400;
+              font-size: 15px;
+              line-height: 18px;
+              
+              color: #214286;">{{ h.markdown_extract(package.notes)|urlize }}</p>
             {% else %}
-              <p>{{ h.markdown_extract(package.notes, truncate)|urlize }}</p>
+              <p style="width: 256.4px;
+              height: 104.84px;
+              left: 75.31px;
+              top: 297.74px;
+              
+              font-family: 'Lato';
+              font-style: normal;
+              font-weight: 400;
+              font-size: 15px;
+              line-height: 18px;
+              
+              color: #214286;">{{ h.markdown_extract(package.notes, truncate)|urlize }}</p>
             {% endif %}
           {% endif %}
         {% endblock %}
@@ -23,3 +75,4 @@
     {% endblock %}
   </section>
 {% endblock %}
+

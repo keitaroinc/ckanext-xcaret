@@ -2,13 +2,15 @@
 {% set pages_total = pages|length %}
 {% set editor = h.get_wysiwyg_editor() %}
 
-<div class="row">
+<ul class="media-grid" style="display: flex;
+justify-content: center;
+flex-wrap: wrap;">
 
   {% for page in pages %}
 
   {% set url = h.url_for('pages.blog_show', page=page.name) %}
 
-  <div class="col col-xs-3" style="margin: 10px;">
+  <!-- <div class="col col-xs-3" style="margin: 10px;">
     <div class="card-group centered-stories">
       <div class="card">
         <img class="card-img-top image-responsive" width="295" height="231px"
@@ -18,7 +20,19 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
+  
+  <li class="media-item-xcaret" style="width: 295px; max-width: 295px; display:inline-block;
+  ">
+  
+  
+    <img style="height: 231px"src="{{ page.image or h.url_for_static('/base/images/no-picture.jpg')}}" alt="first" class="img-responsive media-image">
+  
+  
+    <h2 class="media-heading xcaret_pages_title" style="background: rgba(137, 191, 235, 0.13);">{{ page.title|truncate(30, True, '...') }}</h2>
+ 
+</li>
 
   {% endfor %}
-</div>
+</ul>
+

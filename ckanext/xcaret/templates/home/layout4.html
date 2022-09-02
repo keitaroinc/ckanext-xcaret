@@ -20,8 +20,18 @@ background-repeat: no-repeat; background-size: cover; height:500px;">
             {% snippet 'home/snippets/all_organizations.html' %}
           {% endblock %}
         </div>
-      </div>
-    </div>
+        </div>
+        </div>
+        <div class="page_primary_action"  style="margin-top: 30px;">
+          <a class="btn btn-primary" style="
+          padding: 20px;
+      gap: 10px;
+      
+      width: 252px;
+      height: 64px;
+      left: 602px;
+      top: 456px; display: block; margin: auto;" href="{{ h.url_for('dataset.search') }}">View all Datasets <i class="fa fa-lg fa-eye"></i> </a>
+        </div>
   </div>
 
   <div role="blogs">
@@ -29,24 +39,41 @@ background-repeat: no-repeat; background-size: cover; height:500px;">
       <div class="row row2">
         <h1 class="xcaret_text" style="color: #214286"> Blogs </h1>
 
-        <div class="col">
           {% block featured_group %}
             {% snippet 'home/snippets/latest_pages.html' %}
           {% endblock %}
-        </div>
+         
+ 
       </div>
     </div>
+    <div class="page_primary_action" style="margin-top: 30px;">
+      <a class="btn btn-primary" style="
+            padding: 20px;
+  gap: 10px;
+  
+  width: 252px;
+  height: 64px;
+  left: 602px;
+  top: 456px; display: block; margin: auto;" href="{{ h.url_for('pages.blog_index') }}">View more </a>
+    </div>      
   </div>
 
   <div role="main">
     <div class="container">
-
-        <h1 class="xcaret_text" style="color: #214286"> Datasets </h1>
-
         <div class="col">
         {% block featured_dataset %}
             {% snippet 'home/snippets/latest_datasets.html' %}
           {% endblock %}
         </div>
     </div>
+    <div class="page_primary_action" style="margin-top: 30px;">
+      <a class="btn btn-primary" style="
+      padding: 20px;
+      gap: 10px;
+      
+      width: 252px;
+      height: 64px;
+      left: 602px;
+      top: 456px; display: block; margin: auto;" href="{{ h.url_for('dataset.search') }}">View all Datasets <i class="fa fa-lg fa-eye"></i> </a>
+    </div>      
   </div>
