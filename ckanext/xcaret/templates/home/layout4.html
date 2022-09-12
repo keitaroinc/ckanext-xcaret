@@ -1,6 +1,5 @@
 
-<div role="main" class="hero" style="background-image: url({{ h.url_for_static('/base/images/nado-xenotes-04.jpg') }}); background-position: center;
-background-repeat: no-repeat; background-size: cover; height:500px;">
+<div role="main" class="hero hero-xcaret">
     <div class="container">
       <div class="row row1 xcaret_row">
         <h1 class="xcaret_text xcaret_title"> {{ g.site_title }}</h1>
@@ -20,60 +19,38 @@ background-repeat: no-repeat; background-size: cover; height:500px;">
             {% snippet 'home/snippets/all_organizations.html' %}
           {% endblock %}
         </div>
-        </div>
-        </div>
-        <div class="page_primary_action"  style="margin-top: 30px;">
-          <a class="btn btn-primary" style="
-          padding: 20px;
-      gap: 10px;
-      
-      width: 252px;
-      height: 64px;
-      left: 602px;
-      top: 456px; display: block; margin: auto;" href="{{ h.url_for('dataset.search') }}">View all Datasets <i class="fa fa-lg fa-eye"></i> </a>
-        </div>
+      </div>
+    </div>
+    
+    <div class="page_primary_action page_primary_action-btn">
+      <a class="btn btn-primary xcaret-btn-homepage" href="{{ h.url_for('dataset.search') }}"> {{_('View all Datasets')}} <i class="fa fa-lg fa-eye"></i> </a>
+    </div>
   </div>
 
   <div role="blogs">
     <div class="container">
       <div class="row row2">
-        <h1 class="xcaret_text" style="color: #214286"> Blogs </h1>
-
-          {% block featured_group %}
-            {% snippet 'home/snippets/latest_pages.html' %}
-          {% endblock %}
-         
- 
+        <h1 class="xcaret_text_blue"> {{_('Blogs') }}</h1>
+        {% block featured_group %}
+          {% snippet 'home/snippets/latest_pages.html' %}
+        {% endblock %}
       </div>
     </div>
-    <div class="page_primary_action" style="margin-top: 30px;">
-      <a class="btn btn-primary" style="
-            padding: 20px;
-  gap: 10px;
-  
-  width: 252px;
-  height: 64px;
-  left: 602px;
-  top: 456px; display: block; margin: auto;" href="{{ h.url_for('pages.blog_index') }}">View more </a>
+
+    <div class="page_primary_action page_primary_action-btn">
+      <a class="btn btn-primary xcaret-btn-homepage" href="{{ h.url_for('pages.blog_index') }}"> {{ _('View more')}} </a>
     </div>      
   </div>
 
   <div role="main">
     <div class="container">
-        <div class="col">
+        <div class="col col-xcaret-dataset">
         {% block featured_dataset %}
             {% snippet 'home/snippets/latest_datasets.html' %}
           {% endblock %}
         </div>
     </div>
-    <div class="page_primary_action" style="margin-top: 30px;">
-      <a class="btn btn-primary" style="
-      padding: 20px;
-      gap: 10px;
-      
-      width: 252px;
-      height: 64px;
-      left: 602px;
-      top: 456px; display: block; margin: auto;" href="{{ h.url_for('dataset.search') }}">View all Datasets <i class="fa fa-lg fa-eye"></i> </a>
+    <div class="page_primary_action page_primary_action-btn">
+      <a class="btn btn-primary xcaret-btn-homepage" href="{{ h.url_for('dataset.search') }}">  {{_('View all Datasets')}} <i class="fa fa-lg fa-eye"></i> </a>
     </div>      
   </div>
