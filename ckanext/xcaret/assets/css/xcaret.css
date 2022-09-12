@@ -49,7 +49,7 @@ html {
   a:active,
   a:hover {
     outline: 0;
-    background-color: #F5F5F5;
+    background-color: transparent;
   }
   abbr[title] {
     border-bottom: none;
@@ -1307,6 +1307,8 @@ html {
   }
   p {
     margin: 0 0 10px;
+    font-size: 12px;
+    line-height: 1.5;
   }
   .lead {
     margin-bottom: 20px;
@@ -7193,6 +7195,11 @@ html {
     border: 0px solid #ddd;
     border-width: 0px 0;
   }
+  .media-grid-xcaret {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
   .media-grid:before,
   .media-grid:after {
     display: table;
@@ -7225,7 +7232,14 @@ html {
     background-color: white;
     border-radius: 3px;
     margin: 0px 15px 0px 15px;
+    width: 295px; 
+    max-width: 295px; 
+    display:inline-block; 
+    margin-bottom: 15px;    
 
+  }
+  .media-item-xcaret-img {
+    height: 231px;
   }
   .media-item span.count {
     color: #999;
@@ -10130,6 +10144,13 @@ html {
       margin-right: 0;
     }
   }
+  .site-footer-extra {
+    margin-bottom: initial;
+    padding: 10px 0;
+    color: #fff;
+    background: #222222 url("../../../base/images/bg.png");
+    padding: 20px 0;
+  }  
   .site-footer {
     margin-bottom: initial;
     padding: 10px 0;
@@ -10157,7 +10178,15 @@ html {
     position: relative;
   }
   .site-footer a {
-    color: #fff;
+    color: #93d982;
+    text-decoration: underline;
+    font-size: 12px;
+    padding-bottom: 10px;
+    padding-right: 16px;    
+  }
+  .site-footer a:hover {
+    outline: 0;
+    background-color: transparent;
   }
   .site-footer hgroup h1,
   .site-footer hgroup h2 {
@@ -10262,10 +10291,11 @@ html {
     color: #CCDEE3;
   }
   .site-footer a {
-    color: #CCDEE3;
+    color: #93d982;
   }
   .footer-links ul li {
     margin-bottom: 5px;
+    display: inline;
   }
   .attribution small {
     color: #CCDEE3;
@@ -10707,11 +10737,9 @@ html {
     box-shadow: inset 0 1px 2x rgba(0, 0, 0, 0.2);
   }
   .popover-followee .nav li a:hover i {
-    background-color: #000;
   }
   .popover-followee .nav li.active a i {
-    color: #187794;
-    background-color: #fff;
+    color: #7eba6f;
   }
   .dashboard-me {
     padding: 15px 15px 0 15px;
@@ -10968,19 +10996,23 @@ html {
     text-align: center;
     vertical-align: middle;
   }
+  
+  .xcaret_text_blue {
+    color: #214286;
+    justify-content: center;
+    text-align: center;
+    vertical-align: middle;
+  }
 
   .xcaret_title {
     height: 73px;
-    
     font-family: 'Lato';
     font-style: normal;
     font-weight: 800;
     font-size: 48px;    
   }
 
-  .xcaret_description {
-    height: 49px;
-    
+  .xcaret_description {    
     font-family: 'Lato';
     font-style: normal;
     font-weight: 600;
@@ -11019,4 +11051,190 @@ html {
     line-height: 24px;
 
     color: #000000;
+    background: rgba(137, 191, 235, 0.13); height: 111px;   display: flex;
+    justify-content: center;
+    align-items: center;    
   }
+
+.footer-extra {
+  background-color: inherit;
+  float: left;
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  width: 20%;
+}
+
+.footer-extra p a::after{
+  content: "\a";
+  white-space: pre;
+}
+
+.footer-extra p a {
+  color: white;
+  background-color: transparent;
+  line-height: 3;
+}
+
+.footer-extra a:active,
+.footer-extra a:hover {
+  outline: 0;
+  color: #93d982;
+  background-color: transparent;
+}
+
+.footer-extra-title {
+  font-weight: 600;
+  color: #fff; 
+  padding-bottom: 5px;
+}
+
+.footer-extra-title p {
+  font-size: 15px;
+}
+
+.footer-links-logo {
+  display: flex;
+  align-items: center;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.footer-nav-logo {
+  display: inline-block; 
+  width: 117px; 
+  vertical-align: middle;
+  justify-content: center;
+}
+
+.footer-links-img {
+  width: 100%;
+  padding-top: 50%;
+}
+
+.footer-links-text {
+  padding-left: 15px;
+}
+
+.footer-links-pages {
+  display: inline-block;   
+  display: block;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.footer-links-address {
+  display: block;
+  padding-top: 10px;
+}
+
+.footer_attribution_image {
+  justify-content: center;
+  padding-top: 9%;
+}
+
+.hero-xcaret {
+  background-image: url("../../../base/images/nado-xenotes-04.jpg");
+  background-position: center;
+  background-repeat: no-repeat; 
+  background-size: cover; 
+  height:500px;
+}
+
+.search-xcaret {
+  height: 55px;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;  
+}
+
+.searcg-xcaret-input {
+  background: #EEF1F2;
+}
+
+.page_primary_action-btn {
+  margin-top: 30px;
+}
+
+.xcaret-btn-homepage {
+  padding: 20px;
+  gap: 10px;
+  width: 252px;
+  height: 64px;
+  left: 602px;
+  top: 456px; 
+  display: block; 
+  margin: auto;
+}
+
+.col-xcaret-dataset {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.h1-data {
+  width: 100px;
+  height: 36px;
+  left: 62px;
+  top: 229px;
+  
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 18px;
+  display: inline;
+  
+  color: #E30084;
+}
+
+.i-data {
+  display: inline-block; 
+  color: #E30084;
+}
+
+.media-heading-a {
+  width: 212.44px;
+  height: 22.18px;
+  left: 72.57px;
+  top: 264.48px;
+  
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  
+  color: #214286;
+}
+
+.xcaret-desc {
+  width: 256.4px;
+  height: 104.84px;
+  left: 75.31px;
+  top: 297.74px;
+  
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  
+  color: #214286;
+}
+
+.box-xcaret{
+  margin: 10px;
+  width: 315px;
+  height: 250px;
+  background: #F5F5F5;
+}

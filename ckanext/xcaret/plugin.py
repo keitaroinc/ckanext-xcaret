@@ -24,9 +24,29 @@ class XcaretPlugin(plugins.SingletonPlugin):
         validators = [ignore_missing, str]
 
         schema.update({
-            'ckan.hero': validators,
+        'ckan.hero': validators,
         'hero_upload': [ignore_missing, unicode_safe],
-        'clear_hero_upload': [ignore_missing, unicode_safe],            
+        'clear_hero_upload': [ignore_missing, unicode_safe],
+        'ckan.footer_links_name_1': validators,
+        'ckan.footer_links_1': validators,
+        'ckan.footer_links_name_1_en': validators,
+        'ckan.footer_links_1_en': validators,        
+        'ckan.footer_links_name_2': validators,
+        'ckan.footer_links_2': validators,
+        'ckan.footer_links_name_2_en': validators,
+        'ckan.footer_links_2_en': validators,        
+        'ckan.footer_links_name_3': validators,
+        'ckan.footer_links_3': validators,
+        'ckan.footer_links_name_3_en': validators,
+        'ckan.footer_links_3_en': validators,        
+        'ckan.footer_links_name_4': validators,
+        'ckan.footer_links_4': validators,
+        'ckan.footer_links_name_4_en': validators,
+        'ckan.footer_links_4_en': validators,        
+        'ckan.footer_links_name_5': validators,
+        'ckan.footer_links_5': validators,
+        'ckan.footer_links_name_5_en': validators,
+        'ckan.footer_links_5_en': validators,                               
         })
 
         return schema

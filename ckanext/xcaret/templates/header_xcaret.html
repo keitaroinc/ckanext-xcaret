@@ -43,6 +43,9 @@
           </a>
         </li>
         {% endblock %} {% endblock %}
+        {% block footer_lang %}
+        {% snippet "snippets/language_selector.html" %}
+      {% endblock %}
       </ul>
     </div>
     {% endblock %}

@@ -2,37 +2,13 @@
 {% set pages_total = pages|length %}
 {% set editor = h.get_wysiwyg_editor() %}
 
-<ul class="media-grid" style="display: flex;
-justify-content: center;
-flex-wrap: wrap;">
-
+<ul class="media-grid media-grid-xcaret">
   {% for page in pages %}
-
   {% set url = h.url_for('pages.blog_show', page=page.name) %}
-
-  <!-- <div class="col col-xs-3" style="margin: 10px;">
-    <div class="card-group centered-stories">
-      <div class="card">
-        <img class="card-img-top image-responsive" width="295" height="231px"
-          src="{{ page.image or h.url_for_static('/base/images/no-picture.jpg')}}" alt="">
-        <div class="card-body xcaret_pages_box">
-          <a href="{{ url }}" class="card-title xcaret_pages_title">{{ page.title|truncate(30, True, '...') }}</a>
-        </div>
-      </div>
-    </div>
-  </div> -->
-  
-  <li class="media-item-xcaret" style="width: 295px; max-width: 295px; display:inline-block;
-  ">
-  
-  
-    <img style="height: 231px"src="{{ page.image or h.url_for_static('/base/images/no-picture.jpg')}}" alt="first" class="img-responsive media-image">
-  
-  
-    <h2 class="media-heading xcaret_pages_title" style="background: rgba(137, 191, 235, 0.13);">{{ page.title|truncate(30, True, '...') }}</h2>
- 
-</li>
-
+  <li class="media-item-xcaret">
+      <img src="{{ page.image or h.url_for_static('/base/images/no-picture.jpg')}}" alt="first" class="img-responsive media-image media-item-xcaret-img">
+      <a href="{{url}}"><h2 class="media-heading xcaret_pages_title">{{ page.title|truncate(30, True, '...') }}</h2></a>
+  </li>
   {% endfor %}
 </ul>
 

@@ -1,10 +1,7 @@
 {% set datasets = h.latest_datasets() %}
 
 {% for package in datasets %}
-  <div class="box col-lg-3" style="margin: 10px;
-    width: 315px;
-    height: 250px;
-  background: #F5F5F5;">
+  <div class="box col-lg-3 box-xcaret">
 
     {% snippet 'home/snippets/xcaret_package_item.html', package=package, truncate=50, truncate_title=35 %}
   </div>
