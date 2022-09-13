@@ -3,12 +3,16 @@
 {% set editor = h.get_wysiwyg_editor() %}
 
 <ul class="media-grid media-grid-xcaret">
-  {% for page in pages %}
-  {% set url = h.url_for('pages.blog_show', page=page.name) %}
-  <li class="media-item-xcaret">
-      <img src="{{ page.image or h.url_for_static('/base/images/no-picture.jpg')}}" alt="first" class="img-responsive media-image media-item-xcaret-img">
-      <a href="{{url}}"><h2 class="media-heading xcaret_pages_title">{{ page.title|truncate(30, True, '...') }}</h2></a>
-  </li>
-  {% endfor %}
+  {% if pages_total > 0 %}
+    {% for page in pages %}
+      {% set url = h.url_for('pages.blog_show', page=page.name) %}
+      <li class="media-item-xcaret">
+          <img src="{{ page.image or h.url_for_static('/base/images/no-picture.jpg')}}" alt="first" class="img-responsive media-image media-item-xcaret-img">
+          <a href="{{url}}"><h2 class="media-heading xcaret_pages_title">{{ page.title|truncate(30, True, '...') }}</h2></a>
+      </li>
+    {% endfor %}
+  {% else %}
+      <p>_('No Blogs found')</p>
+  {% endif %}
 </ul>
 

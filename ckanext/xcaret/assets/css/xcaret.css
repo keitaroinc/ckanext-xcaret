@@ -8229,6 +8229,8 @@ html {
   .select2-container-active .select2-choices,
   .select2-container-multi.select2-container-active .select2-choices {
     border-color: rgba(82, 168, 236, 0.8);
+    color: red;
+
     outline: 0;
     outline: thin dotted \9;
     /* IE6-9 */
@@ -10335,7 +10337,8 @@ html {
     color: #000;
   }
   .lang-dropdown {
-    color: #000;
+    color: #214286;
+    text-shadow: none;
   }
   .lang-dropdown li {
     width: auto;
@@ -11237,4 +11240,8 @@ html {
   width: 315px;
   height: 250px;
   background: #F5F5F5;
+}
+
+.lang-container-xcaret {
+  padding: 5px 10px;
 }

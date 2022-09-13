@@ -43,9 +43,6 @@
           </a>
         </li>
         {% endblock %} {% endblock %}
-        {% block footer_lang %}
-        {% snippet "snippets/language_selector.html" %}
-      {% endblock %}
       </ul>
     </div>
     {% endblock %}
@@ -91,7 +88,11 @@
                 <i class="fa fa-lg fa-user-circle-o"></i>
               </a>
             </li>
-
+            <li>
+              {% block footer_lang %}
+              {% snippet "snippets/language_selector.html" %}
+            {% endblock %}
+            </li>
         </ul>
       </nav>
       {% endblock %}
