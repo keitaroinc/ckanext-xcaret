@@ -1617,9 +1617,9 @@ html {
       width: 970px;
     }
   }
-  @media (min-width: 1200px) {
+  @media (min-width: 1400px) {
     .container {
-      width: 1400px;
+      width: 1200px;
     }
   }
   .container-fluid {
@@ -11265,6 +11265,7 @@ html {
 .xcaret-btn-nav {
   margin-top: 2px;
   background-color: white !important;
+  font-weight: normal;
 }
 
 .xcaret-dropdown-a {

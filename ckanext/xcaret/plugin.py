@@ -3,11 +3,13 @@ import ckan.plugins.toolkit as toolkit
 
 from ckanext.xcaret.blueprint import xcaret
 from ckanext.xcaret import helpers as h
+from ckan.lib.plugins import DefaultTranslation
 
-class XcaretPlugin(plugins.SingletonPlugin):
+class XcaretPlugin(plugins.SingletonPlugin, DefaultTranslation):
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.IBlueprint)
-    plugins.implements(plugins.ITemplateHelpers)    
+    plugins.implements(plugins.ITemplateHelpers)   
+    plugins.implements(plugins.ITranslation)     
 
     # IConfigurer
 
@@ -17,6 +19,7 @@ class XcaretPlugin(plugins.SingletonPlugin):
         toolkit.add_resource('fanstatic',
             'xcaret')
         toolkit.add_resource('assets', 'xcaret')
+        
 
     def update_config_schema(self, schema):
         ignore_missing = toolkit.get_validator('ignore_missing')

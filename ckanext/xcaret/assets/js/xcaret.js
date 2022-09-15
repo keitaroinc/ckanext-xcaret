@@ -1,4 +1,4 @@
-this.ckan.module('basic-form', function ($) {
+this.ckan.module('xcaret-form', function ($) {
   return {
     initialize: function () {
       var message = this._('There are unsaved modifications to this form');
@@ -23,10 +23,11 @@ this.ckan.module('basic-form', function ($) {
   };
 });
 
+
 $("#field-homepage-style").change(function() {
-  if ($(this).val() == "4") {
-    $('#xcaret-options').show();
-  } else {
-    $('#xcaret-options').hide();
-  }
-});
+    if ($(this).val() == "4") {
+      $('#xcaret-options').show();
+    } else {
+      $('#xcaret-options').hide();
+    }
+  });
