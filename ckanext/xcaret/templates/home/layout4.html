@@ -1,5 +1,4 @@
-
-<div role="main" class="hero hero-xcaret">
+<div role="main" class="hero hero-xcaret" >
     <div class="container">
       <div class="row row1 xcaret_row">
         <h1 class="xcaret_text xcaret_title"> {{ g.site_title }}</h1>
@@ -44,6 +43,8 @@
 
   <div role="main">
     <div class="container">
+      <h1 class="xcaret_text_blue"> {{_('Latest datasets') }}</h1>
+
         <div class="col col-xcaret-dataset">
         {% block featured_dataset %}
             {% snippet 'home/snippets/latest_datasets.html' %}

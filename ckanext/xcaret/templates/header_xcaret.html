@@ -12,12 +12,7 @@
           </a>
         </li>
         {% endif %}
-        <li>
-          <a href="{{ h.url_for('user.read', id=c.userobj.name) }}" class="image" title="{{ _('View profile') }}">
-                  {{ h.user_image((c.user if c and c.user else ''), size=22) }}
-                  <span class="username">{{ c.userobj.display_name }}</span>
-                </a>
-        </li>
+        
         {% set new_activities = h.new_activities() %}
         <li class="notifications {% if new_activities > 0 %}notifications-important{% endif %}">
           {% set notifications_tooltip = ngettext('Dashboard (%(num)d new item)', 'Dashboard (%(num)d new items)', new_activities)
@@ -33,13 +28,6 @@
           <a href="{{ h.url_for('user.edit', id=c.userobj.name) }}" title="{{ _('Profile settings') }}">
             <i class="fa fa-cog" aria-hidden="true"></i>
             <span class="text">{{ _('Profile settings') }}</span>
-          </a>
-        </li>
-        {% endblock %} {% block header_account_log_out_link %}
-        <li>
-          <a href="{{ h.url_for('/user/_logout') }}" title="{{ _('Log out') }}">
-            <i class="fa fa-sign-out" aria-hidden="true"></i>
-            <span class="text">{{ _('Log out') }}</span>
           </a>
         </li>
         {% endblock %} {% endblock %}
@@ -83,15 +71,38 @@
                   ('organization.index', _('Organizations') | upper),
                   ('pages.index', _('Pages') | upper )) }}
 	          {% endblock %}
-            <li>
+            <li class="nav-item dropdown">
+              {% if c.userobj %}
+              <button class="btn dropdown-toggle xcaret-btn-nav" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a href="#" title="{{ _('User actions') }}" class="nav-link dropdown-toggle xcaret-dropdown-a" data-bs-toggle="dropdown">
+                <i class="fa fa-lg fa-user-circle-o"></i>
+                <span class="username">{{ c.userobj.display_name | upper }}</span>
+              </a>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <li>
+                  <a href="{{ h.url_for('user.read', id=c.userobj.name) }}" class="image xcaret-dropdown-a" title="{{ _('View profile') }}">
+                    <i class="fa fa-lg fa-user-circle-o"></i>
+                    <span class="username">{{ _('View profile') | upper }}</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="{{ h.url_for('/user/_logout') }}" title="{{ _('Log out') }}" class="xcaret-dropdown-a">
+                    <i class="fa fa-lg  fa-sign-out" aria-hidden="true"></i>
+                    <span class="text">{{ _('Log out') | upper }}</span>
+                  </a>
+                </li>
+              </ul>       
+              {% else %}
               <a href="{{ h.url_for('user.login') }}" title="{{ _('Log In') }}">
                 <i class="fa fa-lg fa-user-circle-o"></i>
               </a>
+              {% endif %}
             </li>
             <li>
               {% block footer_lang %}
-              {% snippet "snippets/language_selector.html" %}
-            {% endblock %}
+                {% snippet "snippets/language_selector.html" %}
+              {% endblock %}
             </li>
         </ul>
       </nav>
