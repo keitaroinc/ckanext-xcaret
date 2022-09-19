@@ -8,7 +8,7 @@ from ckanext.xcaret.blueprint import xcaret
 from ckanext.xcaret import helpers as h
 from ckan.lib.plugins import DefaultTranslation
 
-class XcaretPlugin(plugins.SingletonPlugin, DefaultTranslation):
+class XcaretPlugin(plugins.SingletonPlugin, DefaultTranslation, DefaultPermissionLabels):
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.IBlueprint)
     plugins.implements(plugins.ITemplateHelpers)   
