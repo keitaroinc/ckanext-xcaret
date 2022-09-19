@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ckanext-xcaret 0.0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2022-09-15 09:52+0200\n"
-"PO-Revision-Date: 2022-09-15 12:42+0200\n"
+"POT-Creation-Date: 2022-09-19 13:44+0200\n"
+"PO-Revision-Date: 2022-09-19 13:44+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
 "Language-Team: es <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
 
-#: ckanext/xcaret/public/base/javascript/modules/basic-form.js:4
+#: ckanext/xcaret/assets/js/xcaret.js:4
 msgid "There are unsaved modifications to this form"
 msgstr ""
 
@@ -72,28 +72,32 @@ msgid "Datasets"
 msgstr ""
 
 #: ckanext/xcaret/templates/header_xcaret.html:71
-msgid "Organizations"
-msgstr ""
+msgid "Groups"
+msgstr "CATEGORÍAS"
 
 #: ckanext/xcaret/templates/header_xcaret.html:72
 msgid "Pages"
-msgstr ""
+msgstr "NOTICIAS"
 
-#: ckanext/xcaret/templates/header_xcaret.html:77
+#: ckanext/xcaret/templates/header_xcaret.html:73
+msgid "Contact"
+msgstr "CONTACTO"
+
+#: ckanext/xcaret/templates/header_xcaret.html:79
 msgid "User actions"
 msgstr ""
 
-#: ckanext/xcaret/templates/header_xcaret.html:84
 #: ckanext/xcaret/templates/header_xcaret.html:86
+#: ckanext/xcaret/templates/header_xcaret.html:88
 msgid "View profile"
 msgstr ""
 
-#: ckanext/xcaret/templates/header_xcaret.html:90
 #: ckanext/xcaret/templates/header_xcaret.html:92
+#: ckanext/xcaret/templates/header_xcaret.html:94
 msgid "Log out"
 msgstr ""
 
-#: ckanext/xcaret/templates/header_xcaret.html:97
+#: ckanext/xcaret/templates/header_xcaret.html:99
 msgid "Log In"
 msgstr ""
 
@@ -278,25 +282,28 @@ msgid ""
 msgstr ""
 
 #: ckanext/xcaret/templates/home/layout4.html:25
+msgid "View all Categories"
+msgstr "Ver todas las categorías"
+
+#: ckanext/xcaret/templates/home/layout4.html:32
+msgid "Blogs"
+msgstr "Blog"
+
+#: ckanext/xcaret/templates/home/layout4.html:40
+msgid "View more"
+msgstr "Ver mas"
+
+#: ckanext/xcaret/templates/home/layout4.html:46
+msgid "Latest datasets"
+msgstr "Ver todos los datos"
+
 #: ckanext/xcaret/templates/home/layout4.html:55
 msgid "View all Datasets"
 msgstr "Ver todos los datos"
 
-#: ckanext/xcaret/templates/home/layout4.html:32
-msgid "Blogs"
-msgstr "Noticias"
-
-#: ckanext/xcaret/templates/home/layout4.html:40
-msgid "View more"
-msgstr "Ver más"
-
-#: ckanext/xcaret/templates/home/layout4.html:46
-msgid "Latest datasets"
-msgstr "ÚLTIMAS ACTUALIZACIONES"
-
 #: ckanext/xcaret/templates/home/snippets/xcaret_package_item.html:9
 msgid "DATASET"
-msgstr "DATASET"
+msgstr ""
 
 #: ckanext/xcaret/templates/home/snippets/xcaret_search.html:3
 msgid "Search datasets"
