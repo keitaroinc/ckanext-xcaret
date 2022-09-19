@@ -16,3 +16,11 @@ xcaret-style:
   output: xcaret/%(version)s_custom.css
   contents:
     - css/xcaret.css
+
+xcaret-js:
+   output: ckanext-xcaret/%(version)s-xcaret.js
+   contents:
+     - js/xcaret.js
+   extra:
+     preload:
+       - base/main

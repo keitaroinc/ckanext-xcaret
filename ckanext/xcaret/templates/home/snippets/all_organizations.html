@@ -1,7 +1,11 @@
 {% set organizations = h.all_organizations() %}
 
-{% for organization in organizations %}
-  <div class="rounded col-lg-2">
-    {% snippet 'organization/snippets/xcaret_organization_item.html', organization=organization, truncate=50, truncate_title=35 %}
-  </div>
-{% endfor %}
+{% if organizations|length > 0 %}
+  {% for organization in organizations %}
+    <div class="col-sm-2 rounded">
+      {% snippet 'organization/snippets/xcaret_organization_item.html', organization=organization, truncate=50, truncate_title=35 %}
+    </div>
+  {% endfor %}
+{% else %}
+    <p>_('No Organizations found')</p>
+{% endif %}

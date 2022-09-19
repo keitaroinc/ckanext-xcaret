@@ -1,5 +1,4 @@
-
-<div role="main" class="hero hero-xcaret">
+<div role="main" class="hero hero-xcaret" >
     <div class="container">
       <div class="row row1 xcaret_row">
         <h1 class="xcaret_text xcaret_title"> {{ g.site_title }}</h1>
@@ -23,14 +22,14 @@
     </div>
     
     <div class="page_primary_action page_primary_action-btn">
-      <a class="btn btn-primary xcaret-btn-homepage" href="{{ h.url_for('dataset.search') }}"> {{_('View all Datasets')}} <i class="fa fa-lg fa-eye"></i> </a>
+      <a class="btn btn-primary xcaret-btn-homepage" href="{{ h.url_for('dataset.search') }}"> {{_('View all Categories')}} <i class="fa fa-lg fa-eye"></i> </a>
     </div>
   </div>
 
   <div role="blogs">
     <div class="container">
       <div class="row row2">
-        <h1 class="xcaret_text_blue"> {{_('Blogs') }}</h1>
+        <h1 class="xcaret_text_blue"> {{_('Blogs') | upper }}</h1>
         {% block featured_group %}
           {% snippet 'home/snippets/latest_pages.html' %}
         {% endblock %}
@@ -44,6 +43,8 @@
 
   <div role="main">
     <div class="container">
+      <h1 class="xcaret_text_blue"> {{_('Latest datasets') | upper }}</h1>
+
         <div class="col col-xcaret-dataset">
         {% block featured_dataset %}
             {% snippet 'home/snippets/latest_datasets.html' %}

@@ -11,7 +11,7 @@ def get_all_organizations(include_dataset_count=True):
     data_dict = {
         'include_dataset_count': include_dataset_count,
         'all_fields': True}
-    return logic.get_action('organization_list')(context, data_dict)
+    return logic.get_action('group_list')(context, data_dict)
 
 
 def get_latest_datasets():

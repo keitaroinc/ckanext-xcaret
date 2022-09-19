@@ -17,7 +17,7 @@
     {% set field_url = 'ckan.site_logo' %}
     {% set is_upload = data[field_url] and not data[field_url].startswith('http') %}
     {% set is_url = data[field_url] and data[field_url].startswith('http') %}
-    {{ form.image_upload(data, errors, is_upload_enabled=h.uploads_enabled(), is_url=is_url, is_upload=is_upload, upload_label = _('Site logo'), url_label=_('Site logo'),  field_url=field_url, field_upload='logo_upload', field_clear='clear_logo_upload' )}}
+    {{ form.image_upload(data, errors, is_upload_enabled=h.uploads_enabled(), is_url=is_url, is_upload=is_upload, upload_label = _('Site logo'), url_label=_('Site logo'),  field_url=field_url, field_upload='logo_upload', field_clear='clear_logo_upload' )}}  
 
     {{ form.markdown('ckan.site_about', id='field-ckan-site-about', label=_('About'), value=data['ckan.site_about'], error=error, placeholder=_('About page text')) }}
 
@@ -26,41 +26,95 @@
     {{ form.textarea('ckan.site_custom_css', id='field-ckan-site-custom-css', label=_('Custom CSS'), value=data['ckan.site_custom_css'], error=error, placeholder=_('Customisable css inserted into the page header')) }}
 
     {{ form.select('ckan.homepage_style', id='field-homepage-style', label=_('Homepage'), options=homepages, selected=data['ckan.homepage_style'], error=error) }}
-    
-    {% set warning = _('The following section only works if XCaret theme is selected. Otherwise the values are not shown') %}
-    <label>{{warning}}</label></br>
 
-    {{ form.input('ckan.footer_links_name_1', 'field_ckan_footer_links_name_1', label=_('Footer Links Section Name'), value=data['ckan.footer_links_name_1'], error=error, placeholder=_('Name of the first section'), classes=['control-full']) }}
-    {{ form.markdown('ckan.footer_links_1', 'field_ckan_footer_links_1', label=_('Footer Links'), value=data['ckan.footer_links_1'], error=error, placeholder=_('Enter a list of links - one per line - to be shown as a list withing the secondary footer navigation. Please format the links with Markdown (i.e. * [Example link](https://www.example.com)).'), classes=['control-full']) }}
-    {{ form.input('ckan.footer_links_name_1_en', 'field_ckan_footer_links_name_1_en', label=_('English Footer Links Section Name'), value=data['ckan.footer_links_name_1_en'], error=error, placeholder=_('Name of the first section'), classes=['control-full']) }}
-    {{ form.markdown('ckan.footer_links_1_en', 'field_ckan_footer_links_1_en', label=_('English Footer Links'), value=data['ckan.footer_links_1_en'], error=error, placeholder=_('Enter a list of links - one per line - to be shown as a list withing the secondary footer navigation. Please format the links with Markdown (i.e. * [Example link](https://www.example.com)).'), classes=['control-full']) }}    
+    <div id="xcaret-options">
+      {% set warning = _('Xcaret theme specific configuration options ') %}
+      <h2 class="fw-bold mb-0">{{warning}}</h2>
+      {% set explain = _('In the following section you can set up the titles and links of the sections in the first footer:') %}
+      <small>{{explain}}</small><hr>
+      
+      {% set first_footer = _('First footer ') %}
+      <h3 class="fw-bold mb-0">{{first_footer}}</h3><hr>
 
-    {{ form.input('ckan.footer_links_name_2', 'field_ckan_footer_links_name_2', label=_('Footer Links Section Name'), value=data['ckan.footer_links_name_2'], error=error, placeholder=_('Name of the second section'), classes=['control-full']) }}
-    {{ form.markdown('ckan.footer_links_2', 'field_ckan_footer_links_2', label=_('Footer Links'), value=data['ckan.footer_links_2'], error=error, placeholder=_('Enter a list of links - one per line - to be shown as a list withing the secondary footer navigation. Please format the links with Markdown (i.e. * [Example link](https://www.example.com)).'), classes=['control-full']) }}
-    {{ form.input('ckan.footer_links_name_2_en', 'field_ckan_footer_links_name_2_en', label=_('English Footer Links Section Name'), value=data['ckan.footer_links_name_2_en'], error=error, placeholder=_('Name of the first section'), classes=['control-full']) }}
-    {{ form.markdown('ckan.footer_links_2_en', 'field_ckan_footer_links_2_en', label=_('English Footer Links'), value=data['ckan.footer_links_2_en'], error=error, placeholder=_('Enter a list of links - one per line - to be shown as a list withing the secondary footer navigation. Please format the links with Markdown (i.e. * [Example link](https://www.example.com)).'), classes=['control-full']) }}        
+      {% set translate = _('Add English translation') %}
 
-    {{ form.input('ckan.footer_links_name_3', 'field_ckan_footer_links_name_3', label=_('Footer Links Section Name'), value=data['ckan.footer_links_name_3'], error=error, placeholder=_('Name of the third section'), classes=['control-full']) }}
-    {{ form.markdown('ckan.footer_links_3', 'field_ckan_footer_links_3', label=_('Footer Links'), value=data['ckan.footer_links_3'], error=error, placeholder=_('Enter a list of links - one per line - to be shown as a list withing the secondary footer navigation. Please format the links with Markdown (i.e. * [Example link](https://www.example.com)).'), classes=['control-full']) }}
-    {{ form.input('ckan.footer_links_name_3_en', 'field_ckan_footer_links_name_3_en', label=_('English Footer Links Section Name'), value=data['ckan.footer_links_name_3_en'], error=error, placeholder=_('Name of the first section'), classes=['control-full']) }}
-    {{ form.markdown('ckan.footer_links_3_en', 'field_ckan_footer_links_3_en', label=_('English Footer Links'), value=data['ckan.footer_links_3_en'], error=error, placeholder=_('Enter a list of links - one per line - to be shown as a list withing the secondary footer navigation. Please format the links with Markdown (i.e. * [Example link](https://www.example.com)).'), classes=['control-full']) }}    
+      <h4 class="fw-bold mb-0">First Section</h4>
+      {{ form.input('ckan.footer_links_name_1', 'field_ckan_footer_links_name_1', label=_('Title'), value=data['ckan.footer_links_name_1'], error=error, placeholder=_('Name of the first section'), classes=['control-full col-md-6 xcaret-conf-footer']) }}
+      {{ form.input('ckan.footer_links_name_1_en', 'field_ckan_footer_links_name_1_en', label=_('[English] Title'), value=data['ckan.footer_links_name_1_en'], error=error, placeholder=_('Name of the first section'), classes=['control-full col-md-6 xcaret-conf-footer']) }}
+      </br>
 
-    {{ form.input('ckan.footer_links_name_4', 'field_ckan_footer_links_name_4', label=_('Footer Links Section Name'), value=data['ckan.footer_links_name_4'], error=error, placeholder=_('Name of the forth section'), classes=['control-full']) }}
-    {{ form.markdown('ckan.footer_links_4', 'field_ckan_footer_links_4', label=_('Footer Links'), value=data['ckan.footer_links_4'], error=error, placeholder=_('Enter a list of links - one per line - to be shown as a list withing the secondary footer navigation. Please format the links with Markdown (i.e. * [Example link](https://www.example.com)).'), classes=['control-full']) }}
-    {{ form.input('ckan.footer_links_name_4_en', 'field_ckan_footer_links_name_4_en', label=_('English Footer Links Section Name'), value=data['ckan.footer_links_name_4_en'], error=error, placeholder=_('Name of the first section'), classes=['control-full']) }}
-    {{ form.markdown('ckan.footer_links_4_en', 'field_ckan_footer_links_4_en', label=_('English Footer Links'), value=data['ckan.footer_links_4_en'], error=error, placeholder=_('Enter a list of links - one per line - to be shown as a list withing the secondary footer navigation. Please format the links with Markdown (i.e. * [Example link](https://www.example.com)).'), classes=['control-full']) }}
+      {{ form.markdown('ckan.footer_links_1', 'field_ckan_footer_links_1', label=_('Links'), value=data['ckan.footer_links_1'], error=error, placeholder=_('Enter a list of links - one per line - to be shown as a list withing the secondary footer navigation. Please format the links with Markdown (i.e. * [Example link](https://www.example.com)).'), classes=['control-full col-md-6 xcaret-conf-footer']) }}
+      {{ form.markdown('ckan.footer_links_1_en', 'field_ckan_footer_links_1_en', label=_('[English] Links'), value=data['ckan.footer_links_1_en'], error=error, placeholder=_('Enter a list of links - one per line - to be shown as a list withing the secondary footer navigation. Please format the links with Markdown (i.e. * [Example link](https://www.example.com)).'), classes=['control-full col-md-6 xcaret-conf-footer']) }}
 
-    {{ form.input('ckan.footer_links_name_5', 'field_ckan_footer_links_name_5', label=_('Footer Links Section Name'), value=data['ckan.footer_links_name_5'], error=error, placeholder=_('Name of the fifth section'), classes=['control-full']) }}
-    {{ form.markdown('ckan.footer_links_5', 'field_ckan_footer_links_5', label=_('Footer Links'), value=data['ckan.footer_links_5'], error=error, placeholder=_('Enter a list of links - one per line - to be shown as a list withing the secondary footer navigation. Please format the links with Markdown (i.e. * [Example link](https://www.example.com)).'), classes=['control-full']) }}
-    {{ form.input('ckan.footer_links_name_5_en', 'field_ckan_footer_links_name_5_en', label=_('English Footer Links Section Name'), value=data['ckan.footer_links_name_5_en'], error=error, placeholder=_('Name of the first section'), classes=['control-full']) }}
-    {{ form.markdown('ckan.footer_links_5_en', 'field_ckan_footer_links_5_en', label=_('English Footer Links'), value=data['ckan.footer_links_5_en'], error=error, placeholder=_('Enter a list of links - one per line - to be shown as a list withing the secondary footer navigation. Please format the links with Markdown (i.e. * [Example link](https://www.example.com)).'), classes=['control-full']) }}    
-    
+      <h4 class="fw-bold mb-0">Second Section</h4>
+      {{ form.input('ckan.footer_links_name_2', 'field_ckan_footer_links_name_2', label=_('Title'), value=data['ckan.footer_links_name_2'], error=error, placeholder=_('Name of the second section'), classes=['control-full col-md-6 xcaret-conf-footer']) }}
+      {{ form.input('ckan.footer_links_name_2_en', 'field_ckan_footer_links_name_2_en', label=_('[English] Title'), value=data['ckan.footer_links_name_2_en'], error=error, placeholder=_('Name of the first section'), classes=['control-full col-md-6 xcaret-conf-footer']) }}
+      </br>
+      {{ form.markdown('ckan.footer_links_2', 'field_ckan_footer_links_2', label=_('Links'), value=data['ckan.footer_links_2'], error=error, placeholder=_('Enter a list of links - one per line - to be shown as a list withing the secondary footer navigation. Please format the links with Markdown (i.e. * [Example link](https://www.example.com)).'), classes=['control-full col-md-6 xcaret-conf-footer']) }}
+      {{ form.markdown('ckan.footer_links_2_en', 'field_ckan_footer_links_2_en', label=_('[English] Links'), value=data['ckan.footer_links_2_en'], error=error, placeholder=_('Enter a list of links - one per line - to be shown as a list withing the secondary footer navigation. Please format the links with Markdown (i.e. * [Example link](https://www.example.com)).'), classes=['control-full col-md-6 xcaret-conf-footer']) }}
+
+      <h4 class="fw-bold mb-0">Third Section</h4>
+      {{ form.input('ckan.footer_links_name_3', 'field_ckan_footer_links_name_3', label=_('Title'), value=data['ckan.footer_links_name_3'], error=error, placeholder=_('Name of the third section'), classes=['control-full col-md-6 xcaret-conf-footer']) }}
+      {{ form.input('ckan.footer_links_name_3_en', 'field_ckan_footer_links_name_3_en', label=_('[English] Title'), value=data['ckan.footer_links_name_3_en'], error=error, placeholder=_('Name of the first section'), classes=['control-full col-md-6 xcaret-conf-footer']) }}
+      </br>
+      {{ form.markdown('ckan.footer_links_3', 'field_ckan_footer_links_3', label=_('Links'), value=data['ckan.footer_links_3'], error=error, placeholder=_('Enter a list of links - one per line - to be shown as a list withing the secondary footer navigation. Please format the links with Markdown (i.e. * [Example link](https://www.example.com)).'), classes=['control-full col-md-6 xcaret-conf-footer']) }}
+      {{ form.markdown('ckan.footer_links_3_en', 'field_ckan_footer_links_3_en', label=_('[English] Links'), value=data['ckan.footer_links_3_en'], error=error, placeholder=_('Enter a list of links - one per line - to be shown as a list withing the secondary footer navigation. Please format the links with Markdown (i.e. * [Example link](https://www.example.com)).'), classes=['control-full col-md-6 xcaret-conf-footer']) }}
+
+      <h4 class="fw-bold mb-0">Forth Section</h4>
+      {{ form.input('ckan.footer_links_name_4', 'field_ckan_footer_links_name_4', label=_('Title'), value=data['ckan.footer_links_name_4'], error=error, placeholder=_('Name of the forth section'), classes=['control-full col-md-6 xcaret-conf-footer']) }}
+      {{ form.input('ckan.footer_links_name_4_en', 'field_ckan_footer_links_name_4_en', label=_('[English] Title'), value=data['ckan.footer_links_name_4_en'], error=error, placeholder=_('Name of the first section'), classes=['control-full col-md-6 xcaret-conf-footer']) }}
+      </br>
+      {{ form.markdown('ckan.footer_links_4', 'field_ckan_footer_links_4', label=_('Links'), value=data['ckan.footer_links_4'], error=error, placeholder=_('Enter a list of links - one per line - to be shown as a list withing the secondary footer navigation. Please format the links with Markdown (i.e. * [Example link](https://www.example.com)).'), classes=['control-full col-md-6 xcaret-conf-footer']) }}
+      {{ form.markdown('ckan.footer_links_4_en', 'field_ckan_footer_links_4_en', label=_('[English] Links'), value=data['ckan.footer_links_4_en'], error=error, placeholder=_('Enter a list of links - one per line - to be shown as a list withing the secondary footer navigation. Please format the links with Markdown (i.e. * [Example link](https://www.example.com)).'), classes=['control-full col-md-6 xcaret-conf-footer']) }}
+
+      <h4 class="fw-bold mb-0">Fifth Section</h4>
+      {{ form.input('ckan.footer_links_name_5', 'field_ckan_footer_links_name_5', label=_('Title'), value=data['ckan.footer_links_name_5'], error=error, placeholder=_('Name of the fifth section'), classes=['control-full col-md-6 xcaret-conf-footer']) }}
+      {{ form.input('ckan.footer_links_name_5_en', 'field_ckan_footer_links_name_5_en', label=_('[English] Title'), value=data['ckan.footer_links_name_5_en'], error=error, placeholder=_('Name of the first section'), classes=['control-full col-md-6 xcaret-conf-footer']) }}
+      </br>
+      {{ form.markdown('ckan.footer_links_5', 'field_ckan_footer_links_5', label=_('Links'), value=data['ckan.footer_links_5'], error=error, placeholder=_('Enter a list of links - one per line - to be shown as a list withing the secondary footer navigation. Please format the links with Markdown (i.e. * [Example link](https://www.example.com)).'), classes=['control-full col-md-6 xcaret-conf-footer']) }}
+      {{ form.markdown('ckan.footer_links_5_en', 'field_ckan_footer_links_5_en', label=_('[English] Links'), value=data['ckan.footer_links_5_en'], error=error, placeholder=_('Enter a list of links - one per line - to be shown as a list withing the secondary footer navigation. Please format the links with Markdown (i.e. * [Example link](https://www.example.com)).'), classes=['control-full col-md-6 xcaret-conf-footer']) }}
+    </div>
 
   {% endblock %}
 
-  <div class="form-actions">
+  <div class="form-actions xcaret-actions">
     <a href="{% url_for 'admin.reset_config' %}" class="btn btn-danger pull-left" data-module="confirm-action" data-module-content="{{ _('Are you sure you want to reset the config?') }}">{{ _('Reset') }}</a>
     <button type="submit" class="btn btn-primary" name="save">{{ _('Update Config') }}</button>
   </div>
+
 </form>
+{% endblock %}
+
+{% block secondary_content %}
+  <div class="module module-narrow module-shallow">
+    <h2 class="module-heading">
+      <i class="fa fa-info-circle"></i>
+      {{ _('CKAN config options') }}
+    </h2>
+    <div class="module-content">
+      {% block admin_form_help %}
+        {% set about_url = h.url_for(controller='home', action='about') %}
+        {% set home_url = h.url_for(controller='home', action='index') %}
+        {% set docs_url = "http://docs.ckan.org/en/{0}/theming".format(g.ckan_doc_version) %}
+        {% trans %}
+          <p><strong>Site Title:</strong> This is the title of this CKAN instance
+            It appears in various places throughout CKAN.</p>
+          <p><strong>Style:</strong> Choose from a list of simple variations of
+            the main colour scheme to get a very quick custom theme working.</p>
+          <p><strong>Site Tag Logo:</strong> This is the logo that appears in the
+            header of all the CKAN instance templates.</p>
+          <p><strong>About:</strong> This text will appear on this CKAN instances
+            <a href="{{ about_url }}">about page</a>.</p>
+          <p><strong>Intro Text:</strong> This text will appear on this CKAN instances
+            <a href="{{ home_url }}">home page</a> as a welcome to visitors.</p>
+          <p><strong>Custom CSS:</strong> This is a block of CSS that appears in
+            <code>&lt;head&gt;</code> tag of every page. If you wish to customize
+            the templates more fully we recommend
+            <a href="{{ docs_url }}" target="_blank">reading the documentation</a>.</p>
+          <p><strong>Homepage:</strong> This is for choosing a predefined layout for
+            the modules that appear on your homepage.</p>
+      {% endtrans %}
+    {% endblock %}
+    </div>
+  </div>
 {% endblock %}

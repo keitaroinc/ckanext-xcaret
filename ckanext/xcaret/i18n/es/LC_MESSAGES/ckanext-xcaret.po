@@ -1,0 +1,319 @@
+# Spanish translations for ckanext-xcaret.
+# Copyright (C) 2022 ORGANIZATION
+# This file is distributed under the same license as the ckanext-xcaret
+# project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ckanext-xcaret 0.0.1\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2022-09-19 13:44+0200\n"
+"PO-Revision-Date: 2022-09-19 13:44+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: ckanext/xcaret/assets/js/xcaret.js:4
+msgid "There are unsaved modifications to this form"
+msgstr ""
+
+#: ckanext/xcaret/templates/footer_xcaret.html:118
+msgid "Terms of use"
+msgstr ""
+
+#: ckanext/xcaret/templates/footer_xcaret.html:119
+msgid "Sitemap"
+msgstr ""
+
+#: ckanext/xcaret/templates/footer_xcaret.html:120
+msgid "Privacy Notice"
+msgstr ""
+
+#: ckanext/xcaret/templates/header_xcaret.html:9
+msgid "Sysadmin settings"
+msgstr ""
+
+#: ckanext/xcaret/templates/header_xcaret.html:11
+msgid "Admin"
+msgstr ""
+
+#: ckanext/xcaret/templates/header_xcaret.html:18
+#, python-format
+msgid "Dashboard (%(num)d new item)"
+msgid_plural "Dashboard (%(num)d new items)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ckanext/xcaret/templates/header_xcaret.html:22
+msgid "Dashboard"
+msgstr ""
+
+#: ckanext/xcaret/templates/header_xcaret.html:28
+#: ckanext/xcaret/templates/header_xcaret.html:30
+msgid "Profile settings"
+msgstr ""
+
+#: ckanext/xcaret/templates/header_xcaret.html:48
+msgid "Toggle navigation"
+msgstr ""
+
+#: ckanext/xcaret/templates/header_xcaret.html:69
+msgid "Blog"
+msgstr ""
+
+#: ckanext/xcaret/templates/header_xcaret.html:70
+msgid "Datasets"
+msgstr ""
+
+#: ckanext/xcaret/templates/header_xcaret.html:71
+msgid "Groups"
+msgstr "CATEGORÍAS"
+
+#: ckanext/xcaret/templates/header_xcaret.html:72
+msgid "Pages"
+msgstr "NOTICIAS"
+
+#: ckanext/xcaret/templates/header_xcaret.html:73
+msgid "Contact"
+msgstr "CONTACTO"
+
+#: ckanext/xcaret/templates/header_xcaret.html:79
+msgid "User actions"
+msgstr ""
+
+#: ckanext/xcaret/templates/header_xcaret.html:86
+#: ckanext/xcaret/templates/header_xcaret.html:88
+msgid "View profile"
+msgstr ""
+
+#: ckanext/xcaret/templates/header_xcaret.html:92
+#: ckanext/xcaret/templates/header_xcaret.html:94
+msgid "Log out"
+msgstr ""
+
+#: ckanext/xcaret/templates/header_xcaret.html:99
+msgid "Log In"
+msgstr ""
+
+#: ckanext/xcaret/templates/page.html:5
+msgid "Skip to content"
+msgstr ""
+
+#: ckanext/xcaret/templates/page.html:39
+msgid "Breadcrumb"
+msgstr ""
+
+#: ckanext/xcaret/templates/admin/config.html:11
+msgid "Site Title"
+msgstr ""
+
+#: ckanext/xcaret/templates/admin/config.html:13
+msgid "Style"
+msgstr ""
+
+#: ckanext/xcaret/templates/admin/config.html:15
+msgid "Site Tag Line"
+msgstr ""
+
+#: ckanext/xcaret/templates/admin/config.html:20
+msgid "Site logo"
+msgstr ""
+
+#: ckanext/xcaret/templates/admin/config.html:22
+msgid "About"
+msgstr ""
+
+#: ckanext/xcaret/templates/admin/config.html:22
+msgid "About page text"
+msgstr ""
+
+#: ckanext/xcaret/templates/admin/config.html:24
+msgid "Intro Text"
+msgstr ""
+
+#: ckanext/xcaret/templates/admin/config.html:24
+msgid "Text on home page"
+msgstr ""
+
+#: ckanext/xcaret/templates/admin/config.html:26
+msgid "Custom CSS"
+msgstr ""
+
+#: ckanext/xcaret/templates/admin/config.html:26
+msgid "Customisable css inserted into the page header"
+msgstr ""
+
+#: ckanext/xcaret/templates/admin/config.html:28
+msgid "Homepage"
+msgstr ""
+
+#: ckanext/xcaret/templates/admin/config.html:31
+msgid "Xcaret theme specific configuration options "
+msgstr ""
+
+#: ckanext/xcaret/templates/admin/config.html:33
+msgid ""
+"In the following section you can set up the titles and links of the "
+"sections in the first footer:"
+msgstr ""
+
+#: ckanext/xcaret/templates/admin/config.html:36
+msgid "First footer "
+msgstr ""
+
+#: ckanext/xcaret/templates/admin/config.html:39
+msgid "Add English translation"
+msgstr ""
+
+#: ckanext/xcaret/templates/admin/config.html:42
+#: ckanext/xcaret/templates/admin/config.html:50
+#: ckanext/xcaret/templates/admin/config.html:57
+#: ckanext/xcaret/templates/admin/config.html:64
+#: ckanext/xcaret/templates/admin/config.html:71
+msgid "Title"
+msgstr ""
+
+#: ckanext/xcaret/templates/admin/config.html:42
+#: ckanext/xcaret/templates/admin/config.html:43
+#: ckanext/xcaret/templates/admin/config.html:51
+#: ckanext/xcaret/templates/admin/config.html:58
+#: ckanext/xcaret/templates/admin/config.html:65
+#: ckanext/xcaret/templates/admin/config.html:72
+msgid "Name of the first section"
+msgstr ""
+
+#: ckanext/xcaret/templates/admin/config.html:43
+#: ckanext/xcaret/templates/admin/config.html:51
+#: ckanext/xcaret/templates/admin/config.html:58
+#: ckanext/xcaret/templates/admin/config.html:65
+#: ckanext/xcaret/templates/admin/config.html:72
+msgid "[English] Title"
+msgstr ""
+
+#: ckanext/xcaret/templates/admin/config.html:46
+#: ckanext/xcaret/templates/admin/config.html:53
+#: ckanext/xcaret/templates/admin/config.html:60
+#: ckanext/xcaret/templates/admin/config.html:67
+#: ckanext/xcaret/templates/admin/config.html:74
+msgid "Links"
+msgstr ""
+
+#: ckanext/xcaret/templates/admin/config.html:46
+#: ckanext/xcaret/templates/admin/config.html:47
+#: ckanext/xcaret/templates/admin/config.html:53
+#: ckanext/xcaret/templates/admin/config.html:54
+#: ckanext/xcaret/templates/admin/config.html:60
+#: ckanext/xcaret/templates/admin/config.html:61
+#: ckanext/xcaret/templates/admin/config.html:67
+#: ckanext/xcaret/templates/admin/config.html:68
+#: ckanext/xcaret/templates/admin/config.html:74
+#: ckanext/xcaret/templates/admin/config.html:75
+msgid ""
+"Enter a list of links - one per line - to be shown as a list withing the "
+"secondary footer navigation. Please format the links with Markdown (i.e. "
+"* [Example link](https://www.example.com))."
+msgstr ""
+
+#: ckanext/xcaret/templates/admin/config.html:47
+#: ckanext/xcaret/templates/admin/config.html:54
+#: ckanext/xcaret/templates/admin/config.html:61
+#: ckanext/xcaret/templates/admin/config.html:68
+#: ckanext/xcaret/templates/admin/config.html:75
+msgid "[English] Links"
+msgstr ""
+
+#: ckanext/xcaret/templates/admin/config.html:50
+msgid "Name of the second section"
+msgstr ""
+
+#: ckanext/xcaret/templates/admin/config.html:57
+msgid "Name of the third section"
+msgstr ""
+
+#: ckanext/xcaret/templates/admin/config.html:64
+msgid "Name of the forth section"
+msgstr ""
+
+#: ckanext/xcaret/templates/admin/config.html:71
+msgid "Name of the fifth section"
+msgstr ""
+
+#: ckanext/xcaret/templates/admin/config.html:81
+msgid "Are you sure you want to reset the config?"
+msgstr ""
+
+#: ckanext/xcaret/templates/admin/config.html:81
+msgid "Reset"
+msgstr ""
+
+#: ckanext/xcaret/templates/admin/config.html:82
+msgid "Update Config"
+msgstr ""
+
+#: ckanext/xcaret/templates/admin/config.html:92
+msgid "CKAN config options"
+msgstr ""
+
+#: ckanext/xcaret/templates/admin/config.html:99
+#, python-format
+msgid ""
+"<p><strong>Site Title:</strong> This is the title of this CKAN instance "
+"It appears in various places throughout CKAN.</p> "
+"<p><strong>Style:</strong> Choose from a list of simple variations of the"
+" main colour scheme to get a very quick custom theme working.</p> "
+"<p><strong>Site Tag Logo:</strong> This is the logo that appears in the "
+"header of all the CKAN instance templates.</p> <p><strong>About:</strong>"
+" This text will appear on this CKAN instances <a "
+"href=\"%(about_url)s\">about page</a>.</p> <p><strong>Intro "
+"Text:</strong> This text will appear on this CKAN instances <a "
+"href=\"%(home_url)s\">home page</a> as a welcome to visitors.</p> "
+"<p><strong>Custom CSS:</strong> This is a block of CSS that appears in "
+"<code>&lt;head&gt;</code> tag of every page. If you wish to customize the"
+" templates more fully we recommend <a href=\"%(docs_url)s\" "
+"target=\"_blank\">reading the documentation</a>.</p> "
+"<p><strong>Homepage:</strong> This is for choosing a predefined layout "
+"for the modules that appear on your homepage.</p>"
+msgstr ""
+
+#: ckanext/xcaret/templates/home/layout4.html:25
+msgid "View all Categories"
+msgstr "Ver todas las categorías"
+
+#: ckanext/xcaret/templates/home/layout4.html:32
+msgid "Blogs"
+msgstr "Blog"
+
+#: ckanext/xcaret/templates/home/layout4.html:40
+msgid "View more"
+msgstr "Ver mas"
+
+#: ckanext/xcaret/templates/home/layout4.html:46
+msgid "Latest datasets"
+msgstr "Ver todos los datos"
+
+#: ckanext/xcaret/templates/home/layout4.html:55
+msgid "View all Datasets"
+msgstr "Ver todos los datos"
+
+#: ckanext/xcaret/templates/home/snippets/xcaret_package_item.html:9
+msgid "DATASET"
+msgstr ""
+
+#: ckanext/xcaret/templates/home/snippets/xcaret_search.html:3
+msgid "Search datasets"
+msgstr "Buscar archivos o datos"
+
+#: ckanext/xcaret/templates/home/snippets/xcaret_search.html:6
+msgid "Search"
+msgstr "Buscar"
+
+#: ckanext/xcaret/templates/snippets/language_selector.html:10
+msgid "Go"
+msgstr ""
+
