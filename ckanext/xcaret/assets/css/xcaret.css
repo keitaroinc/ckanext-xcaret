@@ -7307,6 +7307,16 @@ html {
             justify-content: center;
     border-radius: 4px;
   }
+  .media-image-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 13rem;
+    width: 13rem;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
   .media-image img {
     max-width:100%;
     max-height:100%;    
