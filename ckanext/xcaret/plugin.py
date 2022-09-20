@@ -54,6 +54,9 @@ class XcaretPlugin(plugins.SingletonPlugin,
             'ckan.footer_links_5': validators,
             'ckan.footer_links_name_5_en': validators,
             'ckan.footer_links_5_en': validators,
+            'ckan.terms_of_use': validators,
+            'ckan.sitemap': validators,
+            'ckan.privacy': validators,
         })
 
         return schema

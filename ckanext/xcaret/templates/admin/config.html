@@ -73,6 +73,13 @@
       </br>
       {{ form.markdown('ckan.footer_links_5', 'field_ckan_footer_links_5', label=_('Links'), value=data['ckan.footer_links_5'], error=error, placeholder=_('Enter a list of links - one per line - to be shown as a list withing the secondary footer navigation. Please format the links with Markdown (i.e. * [Example link](https://www.example.com)).'), classes=['control-full col-md-6 xcaret-conf-footer']) }}
       {{ form.markdown('ckan.footer_links_5_en', 'field_ckan_footer_links_5_en', label=_('[English] Links'), value=data['ckan.footer_links_5_en'], error=error, placeholder=_('Enter a list of links - one per line - to be shown as a list withing the secondary footer navigation. Please format the links with Markdown (i.e. * [Example link](https://www.example.com)).'), classes=['control-full col-md-6 xcaret-conf-footer']) }}
+      </br>
+      {% set second_footer = _('Second footer ') %}
+      <h3 class="fw-bold mb-0">{{second_footer}}</h3><hr>
+      {{ form.input('ckan.terms_of_use', 'field_ckan_terms_of_use', label=_('Terms of use'), value=data['ckan.terms_of_use'], error=error, placeholder=_('Add a link to Terms of use page'), classes=['control-full']) }}
+      {{ form.input('ckan.sitemap', 'field_ckan_sitemap', label=_('Sitemap'), value=data['ckan.sitemap'], error=error, placeholder=_('Add a link to Sitemap page'), classes=['control-full col-md-6 xcaret-conf-footer']) }}
+      {{ form.input('ckan.privacy', 'field_ckan_privacy', label=_('Privacy Notice'), value=data['ckan.privacy'], error=error, placeholder=_('Add a link to Privacy page'), classes=['control-full col-md-6 xcaret-conf-footer']) }}
+
     </div>
 
   {% endblock %}

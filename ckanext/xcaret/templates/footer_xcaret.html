@@ -115,9 +115,9 @@
             <div class="col-md-5 footer-links footer-links-text">
               <ul class="list-unstyled footer-links-pages">
                 {% block footer_links_pages %}
-                  <li><a href="{{ api_url }}">{{ _('Terms of use') }}</a></li>
-                  <li><a href="http://www.ckan.org/">{{ _('Sitemap') }}</a></li>
-                  <li><a href="http://www.opendefinition.org/okd/">{{ _('Privacy Notice') }}</a></li>
+                  <li><a href="{{ g.terms_of_use }}">{{ _('Terms of use') }}</a></li>
+                  <li><a href="{{g.sitemap}}">{{ _('Sitemap') }}</a></li>
+                  <li><a href="{{g.privacy}}">{{ _('Privacy Notice') }}</a></li>
                 {% endblock %}
               </ul>
               <ul class="list-unstyled footer-links-address">
