@@ -11582,3 +11582,7 @@ html {
 .xcaret-actions {
   display: inline-block;
 }
+
+.xcaret-save {
+  margin-left: 10px;
+}
