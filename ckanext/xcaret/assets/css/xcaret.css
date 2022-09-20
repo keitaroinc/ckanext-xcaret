@@ -11316,6 +11316,8 @@ html {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
+  display: inline-block;
+  vertical-align: middle;
   background-color: $card-bg;
   background-clip: border-box;
   border: $card-border-width solid $card-border-color;
@@ -11579,5 +11581,4 @@ html {
 
 .xcaret-actions {
   display: inline-block;
-  min-width: 958px;
 }
