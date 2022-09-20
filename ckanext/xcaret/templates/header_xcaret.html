@@ -96,15 +96,10 @@
                 </li>
               </ul>       
               {% else %}
-                {% if sso in g.plugins %}
                 <a href="{{ h.url_for('saml2auth.saml2login') }}" title="{{ _('Log In') }}">
                   <i class="fa fa-lg fa-user-circle-o"></i>
-                </a>    
-                {% else %}
-                <a href="{{ h.url_for('user.login') }}" title="{{ _('Log In') }}">
-                  <i class="fa fa-lg fa-user-circle-o"></i>
                 </a>
-                {% endif %}
+
               {% endif %}
             </li>
             <li>
