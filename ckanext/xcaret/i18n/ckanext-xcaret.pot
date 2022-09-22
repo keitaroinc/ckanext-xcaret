@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ckanext-xcaret 0.0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2022-09-19 13:44+0200\n"
+"POT-Creation-Date: 2022-09-22 06:56+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,14 +21,17 @@ msgstr ""
 msgid "There are unsaved modifications to this form"
 msgstr ""
 
+#: ckanext/xcaret/templates/admin/config.html:79
 #: ckanext/xcaret/templates/footer_xcaret.html:118
 msgid "Terms of use"
 msgstr ""
 
+#: ckanext/xcaret/templates/admin/config.html:80
 #: ckanext/xcaret/templates/footer_xcaret.html:119
 msgid "Sitemap"
 msgstr ""
 
+#: ckanext/xcaret/templates/admin/config.html:81
 #: ckanext/xcaret/templates/footer_xcaret.html:120
 msgid "Privacy Notice"
 msgstr ""
@@ -95,7 +98,8 @@ msgstr ""
 msgid "Log out"
 msgstr ""
 
-#: ckanext/xcaret/templates/header_xcaret.html:99
+#: ckanext/xcaret/templates/header_xcaret.html:100
+#: ckanext/xcaret/templates/header_xcaret.html:104
 msgid "Log In"
 msgstr ""
 
@@ -242,23 +246,39 @@ msgstr ""
 msgid "Name of the fifth section"
 msgstr ""
 
+#: ckanext/xcaret/templates/admin/config.html:77
+msgid "Second footer "
+msgstr ""
+
+#: ckanext/xcaret/templates/admin/config.html:79
+msgid "Add a link to Terms of use page"
+msgstr ""
+
+#: ckanext/xcaret/templates/admin/config.html:80
+msgid "Add a link to Sitemap page"
+msgstr ""
+
 #: ckanext/xcaret/templates/admin/config.html:81
+msgid "Add a link to Privacy page"
+msgstr ""
+
+#: ckanext/xcaret/templates/admin/config.html:88
 msgid "Are you sure you want to reset the config?"
 msgstr ""
 
-#: ckanext/xcaret/templates/admin/config.html:81
+#: ckanext/xcaret/templates/admin/config.html:88
 msgid "Reset"
 msgstr ""
 
-#: ckanext/xcaret/templates/admin/config.html:82
+#: ckanext/xcaret/templates/admin/config.html:89
 msgid "Update Config"
 msgstr ""
 
-#: ckanext/xcaret/templates/admin/config.html:92
+#: ckanext/xcaret/templates/admin/config.html:99
 msgid "CKAN config options"
 msgstr ""
 
-#: ckanext/xcaret/templates/admin/config.html:99
+#: ckanext/xcaret/templates/admin/config.html:106
 #, python-format
 msgid ""
 "<p><strong>Site Title:</strong> This is the title of this CKAN instance It "
@@ -278,27 +298,39 @@ msgid ""
 "the modules that appear on your homepage.</p>"
 msgstr ""
 
-#: ckanext/xcaret/templates/home/layout4.html:25
+#: ckanext/xcaret/templates/home/layout4.html:27
 msgid "View all Categories"
 msgstr ""
 
-#: ckanext/xcaret/templates/home/layout4.html:32
+#: ckanext/xcaret/templates/home/layout4.html:37
 msgid "Blogs"
 msgstr ""
 
-#: ckanext/xcaret/templates/home/layout4.html:40
+#: ckanext/xcaret/templates/home/layout4.html:45
 msgid "View more"
 msgstr ""
 
-#: ckanext/xcaret/templates/home/layout4.html:46
+#: ckanext/xcaret/templates/home/layout4.html:54
 msgid "Latest datasets"
 msgstr ""
 
-#: ckanext/xcaret/templates/home/layout4.html:55
+#: ckanext/xcaret/templates/home/layout4.html:64
 msgid "View all Datasets"
 msgstr ""
 
-#: ckanext/xcaret/templates/home/snippets/xcaret_package_item.html:9
+#: ckanext/xcaret/templates/home/snippets/all_organizations.html:10
+msgid "No Organizations found"
+msgstr ""
+
+#: ckanext/xcaret/templates/home/snippets/latest_datasets.html:10
+msgid "No Datasets found"
+msgstr ""
+
+#: ckanext/xcaret/templates/home/snippets/latest_pages.html:17
+msgid "No Blogs found"
+msgstr ""
+
+#: ckanext/xcaret/templates/home/snippets/xcaret_package_item.html:10
 msgid "DATASET"
 msgstr ""
 
