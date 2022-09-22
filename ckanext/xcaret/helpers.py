@@ -19,7 +19,7 @@ def get_latest_datasets():
     permission for.
     '''
     context = {'user': c.user}
-    data_dict = {'sort': 'metadata_modified desc', 'rows': 4 }
+    data_dict = {'sort': 'metadata_modified desc', 'rows': 4, 'include_private': True}
 
     datasets = logic.get_action('package_search')(context, data_dict)
     return datasets.get('results', [])

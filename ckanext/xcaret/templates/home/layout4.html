@@ -13,19 +13,24 @@
   <div role="main">
     <div class="container">
       <div class="row row2">
-        <div class="col">
+          <div class="categories">
           {% block featured_organization %}
             {% snippet 'home/snippets/all_organizations.html' %}
           {% endblock %}
-        </div>
+          </div>
       </div>
     </div>
-    
+    {% set organizations = h.all_organizations() %}
+
+    {% if organizations|length > 0 %}    
     <div class="page_primary_action page_primary_action-btn">
-      <a class="btn btn-primary xcaret-btn-homepage" href="{{ h.url_for('dataset.search') }}"> {{_('View all Categories')}} <i class="fa fa-lg fa-eye"></i> </a>
+      <a class="btn btn-primary xcaret-btn-homepage" href="{{ h.url_for('group.index') }}"> {{_('View all Categories')}} <i class="fa fa-lg fa-eye"></i> </a>
     </div>
+    {% endif %}
   </div>
 
+  {% set pages = h.featured_pages(3) %}
+  {% set pages_total = pages|length %}
   <div role="blogs">
     <div class="container">
       <div class="row row2">
@@ -35,23 +40,28 @@
         {% endblock %}
       </div>
     </div>
-
+    {% if pages_total > 0 %}
     <div class="page_primary_action page_primary_action-btn">
       <a class="btn btn-primary xcaret-btn-homepage" href="{{ h.url_for('pages.blog_index') }}"> {{ _('View more')}} </a>
-    </div>      
+    </div>
+    {% endif %}
   </div>
+
+  {% set datasets = h.latest_datasets() %}
 
   <div role="main">
     <div class="container">
       <h1 class="xcaret_text_blue"> {{_('Latest datasets') | upper }}</h1>
-
-        <div class="col col-xcaret-dataset">
+        <div class="row col-xcaret-dataset">
         {% block featured_dataset %}
             {% snippet 'home/snippets/latest_datasets.html' %}
           {% endblock %}
         </div>
     </div>
+    {% set datasets = h.latest_datasets() %}
+    {% if datasets %}
     <div class="page_primary_action page_primary_action-btn">
       <a class="btn btn-primary xcaret-btn-homepage" href="{{ h.url_for('dataset.search') }}">  {{_('View all Datasets')}} <i class="fa fa-lg fa-eye"></i> </a>
-    </div>      
+    </div>
+    {% endif %}    
   </div>

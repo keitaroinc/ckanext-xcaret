@@ -5321,6 +5321,10 @@ html {
     text-align: center;
     margin: 0 px;
   }
+  .media-heading-xcaret {
+    text-align: start;
+    padding-bottom: 20px;
+  }
   .media-list {
     padding-left: 0;
     list-style: none;
@@ -6968,6 +6972,10 @@ html {
     border-top: 0px solid #ddd;
     border-bottom: 0px solid #ddd;
   }
+  .module-heading-xcaret {
+    margin: 0;
+    padding-top: 0 !important;
+  }
   .module-heading:before,
   .module-heading:after {
     display: table;
@@ -7311,8 +7319,6 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 13rem;
-    width: 13rem;
     border-radius: 50%;
     overflow: hidden;
     flex-shrink: 0;
@@ -8807,7 +8813,7 @@ html {
     margin-bottom: 2px;
   }
   .group-list .module-heading h3 a {
-    color: #333;
+    color: #214286;
   }
   .group-list .module-heading .media-image {
     overflow: hidden;
@@ -10086,6 +10092,8 @@ html {
   .masthead .nav > .active > a:focus {
     color: #214286;
     text-shadow: none;
+    font-weight: bolder;
+    font-size: 15px;
   }
   .masthead .site-search {
     margin: 4px 8px 4px 0;
@@ -11247,7 +11255,6 @@ html {
 }
 
 .xcaret-desc {
-  width: 256.4px;
   height: 104.84px;
   left: 75.31px;
   top: 297.74px;
@@ -11257,14 +11264,15 @@ html {
   font-weight: 400;
   font-size: 15px;
   line-height: 18px;
+  text-align: start;
   
   color: #214286;
 }
 
 .box-xcaret{
   margin: 10px;
-  width: 315px;
-  height: 250px;
+  width: 280px;
+  height: 265px;
   background: #F5F5F5;
 }
 
@@ -11280,7 +11288,23 @@ html {
 
 .xcaret-dropdown-a {
   color: #214286 !important;
-  text-decoration: none !important
+  text-decoration: none !important;
+  font-size: 15px;
+  font-weight: bolder;
+}
+
+.username {
+  font-size: 15px;
+  font-weight: bolder;
+}
+
+.text {
+  font-size: 15px;
+  font-weight: bolder;
+}
+
+.xcaret-logo {
+  width: 200px;
 }
 
 .select2-container .select2-choice > .select2-chosen {
@@ -11291,11 +11315,13 @@ html {
   white-space: nowrap;
   text-overflow: ellipsis;
   float: none;
-  width: auto;  
+  width: auto;
+  font-weight: bolder;
 }
 
 .select2-results .select2-result-label {
   color: #214286;
+  font-weight: bolder;
 }
 
 .xcaret-conf-footer {
@@ -11305,10 +11331,6 @@ html {
 .select2-results .select2-highlighted {
   background: #e5e3e3 !important;
 }
-
-//
-// Base styles
-//
 
 .card {
   position: relative;
@@ -11370,10 +11392,6 @@ html {
     margin-left: $card-spacer-x;
   }
 }
-
-//
-// Optional textual caps
-//
 
 .card-header {
   padding: $card-spacer-y $card-spacer-x;
@@ -11585,4 +11603,21 @@ html {
 
 .xcaret-save {
   margin-left: 10px;
+}
+
+.categories {
+display: -webkit-box;
+display: -ms-flexbox;
+display: flex;
+-webkit-box-align: center;
+-ms-flex-align: center;
+align-items: center;
+-webkit-box-pack: center;
+-ms-flex-pack: center;
+justify-content: center;
+}
+
+.categories-img {
+  height: 170px;
+  width: 170px;
 }

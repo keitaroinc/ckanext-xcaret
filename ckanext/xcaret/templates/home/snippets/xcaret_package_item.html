@@ -1,16 +1,18 @@
 {% set url=h.url_for(controller='dataset', action='read', id=package.name) %}
-{% set truncate=truncate or 0 %}
+{% set truncate=180 or 0 %}
 {% block organization_item %}
 <i class=" fa fa-solid fa-circle-small"></i>
   <section class="group-list module module-narrow module-shallow">
     {% block organization_item_header %}
     {% block organization_item_header_image %}
-    <i class=" fa fa-solid fa-circle i-data"></i>
-    <h1 class="h1-data"> {{_('DATASET')}} </h1>
+    <div class="module-heading">
+      <i class=" fa fa-solid fa-circle i-data"></i>
+      <h1 class="h1-data"> {{_('DATASET')}} </h1>
+    </div>
     {% endblock %}
-      <header class="module-heading">
+      <header class="module-heading module-heading-xcaret">
         {% block organization_item_header_title %}
-          <h3 class="media-heading"><a class="media-heding-a" href={{ url }}>{{ package.title or package.name }}</a></h3>
+          <h3 class="media-heading media-heading-xcaret"><a class="media-heding-a" href={{ url }}>{{ package.title or package.name }}</a></h3>
         {% endblock %}
         {% block organization_item_header_description %}
           {% if package.notes %}

@@ -2,7 +2,7 @@
 
 {% if datasets %}
   {% for package in datasets %}
-    <div class="box col-lg-3 box-xcaret">
+    <div class="box col-xs-3 box-xcaret">
       {% snippet 'home/snippets/xcaret_package_item.html', package=package, truncate=50, truncate_title=35 %}
     </div>
   {% endfor %}
