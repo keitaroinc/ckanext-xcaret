@@ -5,7 +5,7 @@
     <div class="row">
       {% if current_lang == 'es' %}
         {% if g.footer_links_name_1 %}
-          <div class="col col-md-2 footer-extra">
+          <div class="col col-md-2 footer-extra col-md-4">
             <h2 class="footer-extra-title">{{ h.render_markdown(g.footer_links_name_1) }} </h2> <hr>
             {% if g.footer_links_1 %}
               {{ h.render_markdown(g.footer_links_1) }}
@@ -14,7 +14,7 @@
         {% endif %}
 
         {% if g.footer_links_name_2 %}
-        <div class="col col-md-2 footer-extra">
+        <div class="col col-md-2 footer-extra col-md-4">
           <h2 class="footer-extra-title">{{ h.render_markdown(g.footer_links_name_2) }} </h2> <hr>
           {% if g.footer_links_2 %}
             {{ h.render_markdown(g.footer_links_2) }}
@@ -23,7 +23,7 @@
         {% endif %}
 
         {% if g.footer_links_name_3 %}
-        <div class="col col-md-2 footer-extra">
+        <div class="col col-md-2 footer-extra col-md-4">
           <h2 class="footer-extra-title">{{ h.render_markdown(g.footer_links_name_3) }} </h2> <hr>
           {% if g.footer_links_3 %}
             {{ h.render_markdown(g.footer_links_3) }}
@@ -32,7 +32,7 @@
         {% endif %}
 
         {% if g.footer_links_name_4 %}
-        <div class="col col-md-2 footer-extra">
+        <div class="col col-md-2 footer-extra col-md-4">
           <h2 class="footer-extra-title">{{ h.render_markdown(g.footer_links_name_4) }} </h2> <hr>
           {% if g.footer_links_4 %}
             {{ h.render_markdown(g.footer_links_4) }}
@@ -41,7 +41,7 @@
         {% endif %}
 
         {% if g.footer_links_name_5 %}
-        <div class="col col-md-2 footer-extra">
+        <div class="col col-md-2 footer-extra col-md-4">
           <h2 class="footer-extra-title">{{ h.render_markdown(g.footer_links_name_5) }} </h2> <hr>
           {% if g.footer_links_5 %}
             {{ h.render_markdown(g.footer_links_5) }}
@@ -51,7 +51,7 @@
 
       {% else %}
         {% if g.footer_links_name_1_en %}
-        <div class="col col-md-2 footer-extra">
+        <div class="col col-md-2 footer-extra col-md-4">
           <h2 class="footer-extra-title">{{ h.render_markdown(g.footer_links_name_1_en) }} </h2> <hr>
           {% if g.footer_links_1_en %}
             {{ h.render_markdown(g.footer_links_1_en) }}
@@ -60,7 +60,7 @@
         {% endif %}
 
         {% if g.footer_links_name_2_en %}
-        <div class="col col-md-2 footer-extra">
+        <div class="col col-md-2 footer-extra col-md-4">
           <h2 class="footer-extra-title">{{ h.render_markdown(g.footer_links_name_2_en) }} </h2> <hr>
           {% if g.footer_links_2_en %}
             {{ h.render_markdown(g.footer_links_2_en) }}
@@ -130,9 +130,9 @@
             </div>
           {% endblock %}
 
-          <div class="col-md-5 attribution">
+          <div class="col-md-5 attribution col-sm-12">
             {% block footer_attribution %}
-              <img class="footer_attribution_image" src="{{ h.url_for_static('/base/images/reconocimientos_es.png')}}" alt="">
+              <img class="footer_attribution_image img-responsive" src="{{ h.url_for_static('/base/images/reconocimientos_es.png')}}" alt="">
             {% endblock %}
           </div>
       </div>

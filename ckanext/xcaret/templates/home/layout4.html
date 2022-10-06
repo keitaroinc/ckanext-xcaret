@@ -1,8 +1,9 @@
-<div role="main" class="hero hero-xcaret" >
+<div role="main" class="hero hero-xcaret hero-upload" >
     <div class="container">
-      <div class="row row1 xcaret_row">
-        <h1 class="xcaret_text xcaret_title"> {{ g.site_title }}</h1>
+      <div class="row xcaret_row">
+        <h1 class="xcaret_text xcaret_title"> {{ g.site_title | upper }}</h1>
         <h1 class="xcaret_text xcaret_description"> {{ g.site_description }}</h1>
+      
         {% block search %}
           {% snippet 'home/snippets/xcaret_search.html' %}
         {% endblock %}
@@ -12,26 +13,24 @@
 
   <div role="main">
     <div class="container">
-      <div class="row row2">
-          <div class="categories">
+          <div class="group-display categories">
           {% block featured_organization %}
             {% snippet 'home/snippets/all_organizations.html' %}
           {% endblock %}
           </div>
-      </div>
     </div>
     {% set organizations = h.all_organizations() %}
 
     {% if organizations|length > 0 %}    
     <div class="page_primary_action page_primary_action-btn">
-      <a class="btn btn-primary xcaret-btn-homepage" href="{{ h.url_for('group.index') }}"> {{_('View all Categories')}} <i class="fa fa-lg fa-eye"></i> </a>
+      <a class="btn btn-primary xcaret-btn-homepage" href="{{ h.url_for('group.index') }}"> {{_('View all Categories')}} <i class="fa fa-lg fa-eye icon-margin"></i> </a>
     </div>
     {% endif %}
   </div>
 
   {% set pages = h.featured_pages(3) %}
   {% set pages_total = pages|length %}
-  <div role="blogs">
+  <div role="blogs" class="blogs">
     <div class="container">
       <div class="row row2">
         <h1 class="xcaret_text_blue"> {{_('Blogs') | upper }}</h1>
@@ -61,7 +60,7 @@
     {% set datasets = h.latest_datasets() %}
     {% if datasets %}
     <div class="page_primary_action page_primary_action-btn">
-      <a class="btn btn-primary xcaret-btn-homepage" href="{{ h.url_for('dataset.search') }}">  {{_('View all Datasets')}} <i class="fa fa-lg fa-eye"></i> </a>
+      <a class="btn btn-primary xcaret-btn-homepage" href="{{ h.url_for('dataset.search') }}">  {{_('View all Datasets')}} <i class="fa fa-lg fa-eye icon-margin"></i> </a>
     </div>
     {% endif %}    
   </div>

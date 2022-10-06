@@ -72,11 +72,11 @@ msgstr "Blog"
 
 #: ckanext/xcaret/templates/header_xcaret.html:70
 msgid "Datasets"
-msgstr ""
+msgstr "Datos   "
 
 #: ckanext/xcaret/templates/header_xcaret.html:71
 msgid "Groups"
-msgstr "Datos"
+msgstr "Categorías"
 
 #: ckanext/xcaret/templates/header_xcaret.html:72
 msgid "Pages"
@@ -351,3 +351,5 @@ msgstr ""
 msgid "Go"
 msgstr ""
 
+msgid "Hero image"
+msgstr "Hero imagen"

@@ -4284,7 +4284,7 @@ html {
     -webkit-overflow-scrolling: touch;
   }
   .navbar-collapse.in {
-    overflow-y: auto;
+    overflow-y: unset;
   }
   @media (min-width: 768px) {
     .navbar-collapse {
@@ -4396,6 +4396,7 @@ html {
     background-image: none;
     border: 1px solid transparent;
     border-radius: 4px;
+    color: #214286;
   }
   .navbar-toggle:focus {
     outline: 0;
@@ -8884,11 +8885,11 @@ html {
   }
   @media (max-width: 767px) {
     .toolbar .breadcrumb {
-      color: #fff;
+      color: #505050;
       text-shadow: none;
     }
     .toolbar .breadcrumb a {
-      color: #fff;
+      color: #505050;
       text-shadow: none;
     }
   }
@@ -9913,6 +9914,10 @@ html {
       right: 0;
     }
   }
+  .blogs {
+    background-color: #f5f5f5;
+    padding-bottom: 20px;
+  }
   .account-masthead {
     min-height: 30px;
     color: #fff;
@@ -10353,6 +10358,7 @@ html {
   .lang-select .lang-container {
     float: left;
     margin-top: 0;
+    width: auto !important;
   }
   .lang-select select {
     color: #000;
@@ -11175,15 +11181,13 @@ html {
 }
 
 .hero-xcaret {
-  background-image: url("../../../base/images/nado-xenotes-04.jpg");
+  background-image: url("../../../base/images/xCaret_image.jpeg");
   background-position: center;
   background-repeat: no-repeat; 
   background-size: cover; 
-  height:500px;
 }
 
 .search-xcaret {
-  height: 55px;
   width: 50%;
   justify-content: center;
   align-items: center;
@@ -11193,6 +11197,11 @@ html {
   right: 0;
   bottom: 0;
   margin: auto;  
+}
+
+.search-form-xcaret {
+  padding: 0;
+  padding-top: 30px;
 }
 
 .searcg-xcaret-input {
@@ -11278,6 +11287,10 @@ html {
 
 .lang-container-xcaret {
   padding: 5px 10px;
+}
+
+.lang-size {
+  width: 14%;
 }
 
 .xcaret-btn-nav {
@@ -11606,18 +11619,62 @@ html {
 }
 
 .categories {
-display: -webkit-box;
-display: -ms-flexbox;
-display: flex;
--webkit-box-align: center;
--ms-flex-align: center;
-align-items: center;
--webkit-box-pack: center;
--ms-flex-pack: center;
-justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .categories-img {
   height: 170px;
   width: 170px;
+}
+
+.icon-margin {
+  margin-left: 10px;
+}
+
+.group-text-align {
+  text-align: center;
+}
+
+.group-display {
+  display: flex;
+  flex-direction: row;  
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+@media (max-width: 880px) {
+  .group-display {
+    flex-direction: column;
+  }
+  .search-xcaret {
+    width: auto;
+  }
+  .footer-extra {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .rounded {
+    width: unset;
+    width: 100%;
+  }
+}
+
+.flex-md-row {
+  -webkit-box-orient: horizontal !important;
+  -webkit-box-direction: normal !important;
+  -ms-flex-direction: row !important;
+  flex-direction: row !important;
+}
+
+.fa-xcaret-search {
+  background-image: url("../../../base/images/search-magnifying-glass-icon-search-icon-gray-transparent-png-917227 1.png");
 }

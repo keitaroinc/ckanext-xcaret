@@ -78,7 +78,7 @@
               <button class="btn dropdown-toggle xcaret-btn-nav" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <a href="#" title="{{ _('User actions') }}" class="nav-link dropdown-toggle xcaret-dropdown-a" data-bs-toggle="dropdown">
                 <i class="fa fa-lg fa-user-circle-o"></i>
-                <span class="username">{{ c.userobj.display_name | upper }}</span>
+                <span class="username">{{ c.userobj.name | upper }}</span>
               </a>
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
@@ -107,7 +107,7 @@
                 {% endif %}
               {% endif %}
             </li>
-            <li>
+            <li class="lang-size">
               {% block footer_lang %}
                 {% snippet "snippets/language_selector.html" %}
               {% endblock %}

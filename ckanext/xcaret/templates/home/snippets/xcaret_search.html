@@ -1,9 +1,14 @@
-<form class="search-form" method="get" action="{% url_for 'dataset.search' %}">
-  <div class="search-input form-group search-giant search-xcaret">
-    <input class="searcg-xcaret-input" aria-label="{% block header_site_search_label %}{{ _('Search datasets') }}{% endblock %}" id="field-main-search" type="text" class="form-control" name="q" value="" autocomplete="off" placeholder="{% block search_placeholder %}{{ _('Search datasets') }} {% endblock %}" />
-    <button type="submit" aria-labelledby="search-label">
-      <i class="fa fa-search"></i>
-      <span class="sr-only" id="search-label">{{ _('Search') }}</span>
-    </button>
-  </div>
+<form {% if form_id %}id="{{ form_id }}" {% endif %}class="search-form{% if no_bottom_border %} no-bottom-border{% endif %} search-form-xcaret" method="get" data-module="select-switch" action="{% url_for 'dataset.search' %}">
+  {% block search_input %}
+    <div class="input-group search-input-group search-xcaret col-sm-12">
+      <input aria-label="{% block header_site_search_label %}{{ _('Search datasets') }}{% endblock %}" id="field-giant-search" type="text" class="form-control input-lg" name="q" value="{{ query }}" autocomplete="off" placeholder="{% block search_placeholder %}{{ _('Search datasets') }} {% endblock %}">
+      {% block search_input_button %}
+      <span class="input-group-btn">
+        <button class="btn btn-default btn-lg" type="submit" value="search" aria-label="{{_('Submit')}}">
+          <i class="fa fa-search"></i>
+        </button>
+      </span>
+      {% endblock %}
+    </div>
+  {% endblock %}
 </form>

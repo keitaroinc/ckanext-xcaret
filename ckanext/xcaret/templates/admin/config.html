@@ -32,6 +32,12 @@
       <h2 class="fw-bold mb-0">{{warning}}</h2>
       {% set explain = _('In the following section you can set up the titles and links of the sections in the first footer:') %}
       <small>{{explain}}</small><hr>
+      {% set hero = _('Hero image') %}
+      <h3 class="fw-bold mb-0">{{hero}}</h3>
+      {% set field_url = 'ckan.hero' %}
+    {% set is_upload = data[field_url] and not data[field_url].startswith('http') %}
+    {% set is_url = data[field_url] and data[field_url].startswith('http') %}
+    {{ form.image_upload(data, errors, is_upload_enabled=h.uploads_enabled(), is_url=is_url, is_upload=is_upload, upload_label = _('Hero image'), url_label=_('Hero image'),  field_url=field_url, field_upload='hero_upload', field_clear='clear_hero_upload' )}}  
       
       {% set first_footer = _('First footer ') %}
       <h3 class="fw-bold mb-0">{{first_footer}}</h3><hr>
@@ -81,7 +87,6 @@
       {{ form.input('ckan.privacy', 'field_ckan_privacy', label=_('Privacy Notice'), value=data['ckan.privacy'], error=error, placeholder=_('Add a link to Privacy page'), classes=['control-full col-md-6 xcaret-conf-footer']) }}
 
     </div>
-
   {% endblock %}
 
   <div class="form-actions xcaret-actions">

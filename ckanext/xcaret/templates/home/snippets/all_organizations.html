@@ -2,7 +2,7 @@
 
 {% if organizations|length > 0 %}
   {% for organization in organizations %}
-    <div class="col-sm-2 rounded">
+    <div class="col-sm-2 rounded group-text-align text-center flex-md-row col-sm-4">
       {% snippet 'organization/snippets/xcaret_organization_item.html', organization=organization, truncate=50, truncate_title=35 %}
     </div>
   {% endfor %}
