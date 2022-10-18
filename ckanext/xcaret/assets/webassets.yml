@@ -17,6 +17,11 @@ xcaret-style:
   contents:
     - css/xcaret.css
 
+base-style:
+  output: xcaret/%(version)s_custom.css
+  contents:
+    - css/base.css
+
 xcaret-js:
    output: ckanext-xcaret/%(version)s-xcaret.js
    contents:

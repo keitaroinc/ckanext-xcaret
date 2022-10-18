@@ -31,3 +31,13 @@ $("#field-homepage-style").change(function() {
       $('#xcaret-options').hide();
     }
   });
+
+  $(document).ready(function () {     
+    var style = $("#field-homepage-style").val();
+
+    if (style == "4") {
+      $('#xcaret-options').show();
+    } else {
+      $('#xcaret-options').hide();
+    }
+  });

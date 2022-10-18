@@ -7252,6 +7252,7 @@ html {
 
   .media-item-xcaret-img {
     height: 231px;
+    width: 100%;
   }
   .media-item span.count {
     color: #999;
@@ -7726,7 +7727,7 @@ html {
     margin-left: 0;
   }
   .form-actions {
-    overflow: auto;
+    overflow: inherit;
   }
   @media (min-width: 768px) {
     .form-actions {
@@ -11665,6 +11666,9 @@ html {
   .rounded {
     width: unset;
     width: 100%;
+  }
+  .xcaret-logo {
+    width: 150px;
   }
 }
 

@@ -2,6 +2,9 @@
 
 {% block styles %}
   {{ super() }}
+  {% asset 'xcaret/xcaret-js' %}
+  {% asset 'xcaret/base-style' %}
+
   {% if g.homepage_style == '4' %}
     {% asset 'xcaret/xcaret-style' %}
     {% asset 'xcaret/xcaret-js' %}
