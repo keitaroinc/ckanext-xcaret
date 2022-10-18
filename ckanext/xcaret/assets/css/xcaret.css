@@ -11346,13 +11346,20 @@ html {
   background: #e5e3e3 !important;
 }
 
+.xcaret-a-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+
 .card {
   position: relative;
   display: flex;
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  display: inline-block;
   vertical-align: middle;
   background-color: $card-bg;
   background-clip: border-box;
@@ -11633,6 +11640,7 @@ html {
 .categories-img {
   height: 170px;
   width: 170px;
+  flex-basis: 100%;
 }
 
 .icon-margin {
