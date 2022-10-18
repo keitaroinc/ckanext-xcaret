@@ -11656,6 +11656,7 @@ html {
   flex-direction: row;  
   padding-top: 10px;
   padding-bottom: 10px;
+  flex-wrap: wrap;
 }
 
 @media (max-width: 880px) {
