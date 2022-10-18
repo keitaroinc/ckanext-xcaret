@@ -353,3 +353,60 @@ msgstr ""
 
 msgid "Hero image"
 msgstr "Hero imagen"
+
+msgid "Subject"
+msgstr "Claves"
+
+msgid "Creator"
+msgstr "Autor"
+
+msgid "Publisher"
+msgstr "Editor"
+
+msgid "Contributor"
+msgstr "Otros colaboradores"
+
+msgid "Date"
+msgstr "Fecha de creación​"
+
+msgid "Type"
+msgstr "Tipo del recurso"
+
+msgid "Identifier"
+msgstr "Identificador"
+
+msgid "Source"
+msgstr "Fuente​"
+
+msgid "Language"
+msgstr "Idioma"
+
+msgid "Relation"
+msgstr "Relación"
+
+msgid "Coverage"
+msgstr "Cobertura​"
+
+msgid "Rights"
+msgstr "Derechos​"
+
+msgid "Soporte"
+msgstr "Medium"
+
+msgid "Source of acquisition​"
+msgstr "Forma de ingreso"
+
+msgid "Organization/Description"
+msgstr "Organización/Descripción"
+
+msgid "Physical characteristics and technical requirements"
+msgstr "Características físicas y requisitos técnicos"
+
+msgid "Existence and location of originals"
+msgstr "Existencia y localización de los documentos originales"
+
+msgid "Rules or Conventions​"
+msgstr "Reglas o normas"
+
+msgid "Date(s) of descriptions"
+msgstr "Fecha(s) de la descripción"
