@@ -1,5 +1,5 @@
 include README.rst
 include LICENSE
 include requirements.txt
-recursive-include ckanext/xcaret *.html *.json *.js *.less *.css *.mo *.yml  *.jpg *.png *.otf *.ttf *.js *.woff2
+recursive-include ckanext/xcaret *.html *.json *.js *.less *.css *.mo *.yml  *.jpg *.png *.otf *.ttf *.js *.woff2 *.jpeg
 recursive-include ckanext/xcaret/migration *.ini *.py *.mako
