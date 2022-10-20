@@ -410,3 +410,6 @@ msgstr "Reglas o normas"
 
 msgid "Date(s) of descriptions"
 msgstr "Fecha(s) de la descripción"
+
+msgid "Categories"
+msgstr "Categorías"
