@@ -11660,9 +11660,6 @@ html {
 }
 
 @media (max-width: 880px) {
-  .group-display {
-    flex-direction: column;
-  }
   .search-xcaret {
     width: auto;
   }
@@ -11672,10 +11669,6 @@ html {
 }
 
 @media (max-width: 1000px) {
-  .rounded {
-    width: unset;
-    width: 100%;
-  }
   .xcaret-logo {
     width: 150px;
   }
