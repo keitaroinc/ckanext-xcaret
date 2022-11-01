@@ -11687,6 +11687,11 @@ p > img {
   height: 100% !important;
 }
 
+figure > img {
+  width: 100% !important;
+  height: 100% !important;
+}
+
 .flex-md-row {
   -webkit-box-orient: horizontal !important;
   -webkit-box-direction: normal !important;
