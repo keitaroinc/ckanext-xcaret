@@ -1135,6 +1135,7 @@ html {
   img {
     vertical-align: middle;
   }
+
   .img-responsive,
   .thumbnail > img,
   .thumbnail a > img,
@@ -11679,6 +11680,11 @@ html {
     width: 150px;
   }
 
+}
+
+p > img {
+  width: 100% !important;
+  height: 100% !important;
 }
 
 .flex-md-row {
